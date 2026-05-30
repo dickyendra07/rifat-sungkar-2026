@@ -1,0 +1,383 @@
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+
+const featuredEvents = [
+  {
+    eyebrow: "The Legend Continues",
+    title: "Rifat Sungkar x El Mayka",
+    category: "Motorsport / Family Legacy",
+    status: "Coming 2026",
+    location: "TBA",
+    image: "/images/rs-about-front.png",
+    description:
+      "A cross-generation racing moment between father and son. This event celebrates the passion passed from Rifat Sungkar to El Mayka, bringing legacy, competition, and family pride onto the same track.",
+    cta: "View Event Details",
+    href: "/events/the-legend-continues",
+  },
+  {
+    eyebrow: "Secret Riding",
+    title: "Rifat Sungkar x Sissy Priscillia",
+    category: "Lifestyle / Open Road",
+    status: "Coming 2026",
+    location: "TBA",
+    image: "/images/rs-lifestyle.png",
+    description:
+      "An exclusive riding journey that captures the lifestyle side of the Sungkar family. Built around adventure, freedom, and togetherness, Secret Riding brings a more personal story to the open road.",
+    cta: "View Event Details",
+    href: "/events/secret-riding",
+  },
+];
+
+const timeline = [
+  {
+    number: "01",
+    title: "Campaign Announcement",
+    description:
+      "The official introduction of Rifat Sungkar 2026: The Legend Continues, revealing the campaign direction and its two main stories.",
+  },
+  {
+    number: "02",
+    title: "Preparation Journey",
+    description:
+      "Behind-the-scenes preparation, vehicle setup, content production, training moments, and family-driven campaign storytelling.",
+  },
+  {
+    number: "03",
+    title: "Main Event Activation",
+    description:
+      "The key campaign moments featuring the racing legacy between Rifat and El Mayka, plus the cinematic lifestyle riding story with Sissy.",
+  },
+  {
+    number: "04",
+    title: "Stories & Recap",
+    description:
+      "Post-event highlights, media coverage, gallery content, and editorial stories that continue the campaign beyond the event day.",
+  },
+];
+
+const categories = [
+  {
+    title: "Motorsport",
+    description:
+      "High-energy racing, performance culture, competition, and discipline on the circuit.",
+  },
+  {
+    title: "Family Legacy",
+    description:
+      "A story about passion, values, mentorship, and the bond between generations.",
+  },
+  {
+    title: "Lifestyle Riding",
+    description:
+      "Open-road moments, cinematic travel, togetherness, and automotive lifestyle.",
+  },
+  {
+    title: "Media & Community",
+    description:
+      "Press coverage, community engagement, behind-the-scenes content, and campaign updates.",
+  },
+];
+
+export const metadata = {
+  title: "Rifat Sungkar 2026 Events | Racing & Riding",
+  description:
+    "Explore Rifat Sungkar 2026 events, including The Legend Continues with El Mayka and Secret Riding with Sissy Priscillia.",
+};
+
+export default function EventsPage() {
+  return (
+    <main className="min-h-screen bg-[#07090d] text-white">
+      <Navbar />
+
+      <section className="rs-reveal relative overflow-hidden bg-[#07090d] pt-[88px]">
+        <div className="relative min-h-[680px] rs-kenburns-bg bg-[url('/images/hero-rifat.png')] rs-kenburns-bg bg-cover bg-center">
+          <div className="absolute inset-0 bg-black/45" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/78 via-black/38 to-black/35" />
+          <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#07090d] to-transparent" />
+
+          <div className="relative z-10 mx-auto grid min-h-[680px] max-w-[1440px] gap-12 px-6 py-20 md:px-10 lg:grid-cols-[0.95fr_0.75fr] lg:items-center lg:px-12">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.35em] text-[#f2a0b8]">
+                Events
+              </p>
+
+              <h1 className="font-tungsten mt-5 max-w-4xl text-7xl font-black uppercase leading-[0.86] tracking-normal md:text-8xl lg:text-9xl text-white">
+                Two Stories.
+                <br />
+                One Legacy.
+              </h1>
+
+              <p className="mt-7 max-w-2xl text-xl leading-9 tracking-[0.02em] text-white/78">
+                Explore the official campaign events of Rifat Sungkar 2026, from a
+                cross-generation racing moment with El Mayka to a cinematic riding journey with
+                Sissy Priscillia.
+              </p>
+
+              <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+                <a
+                  href="#featured-events"
+                  className="inline-flex items-center justify-center gap-4 rounded-full bg-gradient-to-r from-[#62d9db] to-[#f19ac2] px-8 py-4 text-[11px] font-black uppercase tracking-[0.24em] text-white shadow-lg shadow-pink-500/20 transition hover:scale-[1.02]"
+                >
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20">
+                    →
+                  </span>
+                  View Events
+                </a>
+
+                <a
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-full border border-white/20 bg-black/20 px-8 py-4 text-[11px] font-black uppercase tracking-[0.24em] text-white/85 backdrop-blur-sm transition hover:border-white hover:bg-white hover:text-black"
+                >
+                  Contact Team
+                </a>
+              </div>
+            </div>
+
+            <div className="rounded-[2rem] border border-white/10 bg-black/35 p-7 shadow-2xl shadow-black/35 backdrop-blur-md">
+              <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#62d9db]">
+                Campaign Events
+              </p>
+
+              <h2 className="font-tungsten mt-4 text-5xl font-black uppercase leading-none tracking-normal text-white md:text-6xl">
+                Racing,
+                <br />
+                Riding & Legacy
+              </h2>
+
+              <p className="mt-5 text-base leading-7 tracking-[0.02em] text-white/62">
+                Two main event directions are prepared to carry the 2026 campaign: one on the
+                circuit, one on the open road.
+              </p>
+
+              <div className="mt-8 grid gap-4">
+                <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+                  <p className="text-xs font-bold uppercase tracking-[0.25em] text-white/36">
+                    Main Story
+                  </p>
+                  <p className="mt-2 font-semibold tracking-[0.02em] text-white/80">
+                    Rifat Sungkar x El Mayka
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+                  <p className="text-xs font-bold uppercase tracking-[0.25em] text-white/36">
+                    Lifestyle Story
+                  </p>
+                  <p className="mt-2 font-semibold tracking-[0.02em] text-white/80">
+                    Secret Riding with Sissy Priscillia
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="featured-events" className="bg-[#07090d] px-6 py-20 md:px-10 lg:px-12">
+        <div className="mx-auto max-w-[1440px]">
+          <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.32em] text-[#f2a0b8]">
+                Featured Events
+              </p>
+              <h2 className="font-tungsten mt-4 text-6xl font-black uppercase leading-none tracking-normal text-white md:text-7xl">
+                Campaign Activations
+              </h2>
+            </div>
+
+            <p className="max-w-xl text-base leading-7 tracking-[0.02em] text-white/62">
+              Each event brings a different side of the campaign: performance, family, lifestyle,
+              and the continuation of Indonesian motorsport legacy.
+            </p>
+          </div>
+
+          <div className="rs-mobile-slider -mx-6 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-4 md:mx-0 md:grid md:grid-cols-2 md:gap-8 md:overflow-visible md:px-0 md:pb-0">
+            {featuredEvents.map((event) => (
+              <article
+                key={event.title}
+                className="group relative min-w-[88%] snap-center overflow-hidden rounded-2xl border border-white/10 bg-[#111820] shadow-2xl shadow-black/25 transition duration-300 hover:-translate-y-1 hover:border-[#f19ac2]/45 hover:shadow-[0_0_46px_rgba(98,217,219,0.12)] md:min-w-0"
+              >
+                <div className="pointer-events-none absolute -inset-px rounded-2xl bg-gradient-to-r from-[#62d9db]/35 via-white/5 to-[#f19ac2]/35 opacity-0 transition duration-300 group-hover:opacity-100" />
+
+                <div className="relative z-10 m-px overflow-hidden rounded-2xl bg-[#111820]">
+                  <div className="relative h-[230px] overflow-hidden md:h-[330px]">
+                    <img
+                      src={event.image}
+                      alt={event.title}
+                      className="h-full w-full object-cover object-center transition duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#111820] via-black/20 to-transparent" />
+                    <div className="absolute left-6 top-6 rounded-full border border-white/15 bg-black/30 px-4 py-2 text-[10px] font-black uppercase tracking-[0.24em] text-white/80 backdrop-blur-sm">
+                      {event.status}
+                    </div>
+                  </div>
+
+                  <div className="p-7">
+                    <div className="mb-6 h-1 w-16 rounded-full bg-gradient-to-r from-[#62d9db] to-[#f19ac2]" />
+
+                    <p className="text-base font-bold tracking-[0.08em] text-[#f2a0b8]">
+                      {event.eyebrow}
+                    </p>
+
+                    <h3 className="font-tungsten mt-2 text-5xl font-black leading-none tracking-normal text-white md:text-6xl">
+                      {event.title}
+                    </h3>
+
+                    <div className="mt-5 grid gap-3 text-sm text-white/55 sm:grid-cols-2">
+                      <p>
+                        <span className="text-white/35">Category:</span> {event.category}
+                      </p>
+                      <p>
+                        <span className="text-white/35">Location:</span> {event.location}
+                      </p>
+                    </div>
+
+                    <p className="mt-5 text-sm leading-7 tracking-[0.02em] text-white/66">
+                      {event.description}
+                    </p>
+
+                    <a
+                      href={event.href}
+                      className="mt-8 block overflow-hidden rounded-2xl border border-white/20 bg-gradient-to-r from-[#f2d8d2]/95 via-[#b9eee8]/95 to-[#62d9db]/95 shadow-[0_0_32px_rgba(98,217,219,0.14)] transition hover:scale-[1.01]"
+                    >
+                      <div className="flex items-center justify-between gap-4 px-5 py-4">
+                        <span className="text-[11px] font-black uppercase tracking-[0.22em] text-[#07090d]">
+                          {event.cta}
+                        </span>
+
+                        <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#07090d] text-sm text-white">
+                          →
+                        </span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-5 flex items-center justify-center gap-2 md:hidden">
+            {featuredEvents.map((event) => (
+              <span
+                key={event.title}
+                className="h-1.5 w-10 rounded-full bg-gradient-to-r from-[#62d9db] to-[#f19ac2] opacity-55"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="rs-reveal bg-[#07090d] px-6 py-20 md:px-10 lg:px-12">
+        <div className="mx-auto max-w-[1440px]">
+          <div className="mb-12">
+            <p className="text-sm font-bold uppercase tracking-[0.32em] text-[#f2a0b8]">
+              Campaign Journey
+            </p>
+            <h2 className="font-tungsten mt-4 text-6xl font-black uppercase leading-none tracking-normal text-white md:text-7xl">
+              Event Timeline
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 md:gap-6 lg:grid-cols-4">
+            {timeline.map((item) => (
+              <article
+                key={item.number}
+                className="rounded-2xl border border-white/10 bg-[#111820] p-4 shadow-2xl shadow-black/20 md:p-7"
+              >
+                <p className="font-tungsten text-3xl font-black leading-none text-[#f2a0b8] md:text-6xl">
+                  {item.number}
+                </p>
+                <h3 className="mt-5 text-sm font-black leading-5 tracking-[-0.02em] text-white md:mt-7 md:text-xl md:leading-7">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-xs leading-5 tracking-[0.02em] text-white/62 md:mt-4 md:text-sm md:leading-7">
+                  {item.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="rs-reveal bg-[#07090d] px-6 py-20 md:px-10 lg:px-12">
+        <div className="mx-auto grid max-w-[1440px] gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.32em] text-[#f2a0b8]">
+              Event Categories
+            </p>
+            <h2 className="font-tungsten mt-4 text-6xl font-black uppercase leading-[0.9] tracking-normal text-white md:text-7xl">
+              What the Campaign Covers
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 md:gap-5">
+            {categories.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 transition hover:border-[#f19ac2]/40 hover:bg-white/[0.05] md:p-6"
+              >
+                <div className="mb-4 h-1 w-12 rounded-full bg-gradient-to-r from-[#62d9db] to-[#f19ac2] md:mb-5 md:w-14" />
+                <h3 className="font-tungsten text-3xl font-black leading-none tracking-normal text-white md:text-4xl">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-xs leading-5 tracking-[0.02em] text-white/62 md:mt-4 md:text-sm md:leading-7">
+                  {item.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="rs-reveal px-6 pb-24 pt-10 md:px-10 lg:px-12">
+        <div className="relative mx-auto max-w-[1440px] overflow-hidden rounded-[2rem] border border-white/10 bg-[#111820]">
+          <div className="absolute inset-0 rs-kenburns-bg bg-[url('/images/rs-cta-homepage.png')] rs-kenburns-bg bg-cover bg-center opacity-65" />
+          <div className="absolute inset-0 bg-black/55" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/30" />
+
+          <div className="relative z-10 grid gap-10 p-8 md:p-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.32em] text-[#f2a0b8]">
+                Join the Campaign
+              </p>
+
+              <h2 className="font-tungsten mt-4 max-w-xl text-6xl font-black uppercase leading-[0.9] tracking-normal md:text-7xl text-white">
+                Want to Be Part
+                <br />
+                of the Journey?
+              </h2>
+            </div>
+
+            <div>
+              <p className="max-w-xl text-lg leading-8 tracking-[0.02em] text-white/72">
+                For partnership, media, sponsorship, and event collaboration inquiries, connect
+                with the Rifat Sungkar 2026 team.
+              </p>
+
+              <div className="mt-7 flex flex-col gap-4 sm:flex-row">
+                <a
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-4 rounded-full bg-gradient-to-r from-[#62d9db] to-[#f19ac2] px-8 py-4 text-[11px] font-black uppercase tracking-[0.24em] text-white shadow-lg shadow-pink-500/20 transition hover:scale-[1.02]"
+                >
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20">
+                    →
+                  </span>
+                  Contact Team
+                </a>
+
+                <a
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-full border border-white/20 bg-black/20 px-8 py-4 text-[11px] font-black uppercase tracking-[0.24em] text-white/85 backdrop-blur-sm transition hover:border-white hover:bg-white hover:text-black"
+                >
+                  Become a Partner
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </main>
+  );
+}

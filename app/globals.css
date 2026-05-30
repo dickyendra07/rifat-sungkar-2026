@@ -24,3 +24,545 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.font-tungsten {
+  font-family: var(--font-tungsten), Impact, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+/* RS Motion System */
+@keyframes rsKenBurns {
+  0% {
+    background-size: 105%;
+    background-position: center center;
+  }
+  100% {
+    background-size: 116%;
+    background-position: center center;
+  }
+}
+
+@keyframes rsReveal {
+  from {
+    opacity: 0;
+    transform: translateY(42px);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.rs-kenburns-bg {
+  animation: rsKenBurns 18s ease-in-out infinite alternate;
+  will-change: background-size;
+}
+
+.rs-reveal {
+  opacity: 0;
+  transform: translateY(42px);
+}
+
+@supports (animation-timeline: view()) {
+  .rs-reveal {
+    animation: rsReveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 26%;
+  }
+}
+
+@supports not (animation-timeline: view()) {
+  .rs-reveal {
+    animation: rsReveal 0.8s ease both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rs-kenburns-bg,
+  .rs-reveal {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
+/* RS Reliable Motion System */
+@keyframes rsKenBurnsStrong {
+  0% {
+    background-size: 106% auto;
+    background-position: center center;
+  }
+  100% {
+    background-size: 118% auto;
+    background-position: center center;
+  }
+}
+
+.rs-kenburns-bg {
+  background-size: 106% auto !important;
+  animation: rsKenBurnsStrong 16s ease-in-out infinite alternate;
+  will-change: background-size, background-position;
+}
+
+.rs-reveal {
+  opacity: 0;
+  transform: translateY(42px);
+  filter: blur(8px);
+  transition:
+    opacity 0.75s ease,
+    transform 0.75s ease,
+    filter 0.75s ease;
+}
+
+.rs-reveal.rs-visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+@media (max-width: 768px) {
+  .rs-kenburns-bg {
+    animation-duration: 20s;
+    background-size: cover !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rs-kenburns-bg,
+  .rs-reveal {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
+
+/* RS Motion Override - Stronger Ken Burns */
+@keyframes rsKenBurnsStrongVisible {
+  0% {
+    background-size: 108% !important;
+    background-position: center center !important;
+  }
+  100% {
+    background-size: 128% !important;
+    background-position: 56% 48% !important;
+  }
+}
+
+.rs-kenburns-bg {
+  background-size: 108% !important;
+  background-position: center center !important;
+  animation: rsKenBurnsStrongVisible 9s ease-in-out infinite alternate !important;
+  will-change: background-size, background-position;
+}
+
+/* Softer reveal, still blur but more visible */
+.rs-reveal {
+  opacity: 0;
+  transform: translateY(56px);
+  filter: blur(10px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease,
+    filter 0.9s ease;
+}
+
+.rs-reveal.rs-visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* RS Premium Entrance Override */
+.rs-reveal {
+  opacity: 0 !important;
+  transform: translateY(28px) scale(0.985) !important;
+  filter: none !important;
+  transition:
+    opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  animation: none !important;
+  will-change: opacity, transform;
+}
+
+.rs-reveal.rs-visible {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+  filter: none !important;
+}
+
+.rs-reveal:nth-of-type(2) {
+  transition-delay: 0.04s !important;
+}
+
+.rs-reveal:nth-of-type(3) {
+  transition-delay: 0.08s !important;
+}
+
+.rs-reveal:nth-of-type(4) {
+  transition-delay: 0.12s !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rs-reveal,
+  .rs-reveal.rs-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* RS Entrance Mode C - Alternating Slide In */
+.rs-reveal {
+  opacity: 0 !important;
+  filter: none !important;
+  animation: none !important;
+  transition:
+    opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: opacity, transform;
+}
+
+/* Default: slide from left */
+.rs-reveal {
+  transform: translateX(-34px) translateY(12px) !important;
+}
+
+/* Alternate sections: slide from right */
+.rs-reveal:nth-of-type(even) {
+  transform: translateX(34px) translateY(12px) !important;
+}
+
+/* Visible state */
+.rs-reveal.rs-visible,
+.rs-reveal:nth-of-type(even).rs-visible {
+  opacity: 1 !important;
+  transform: translateX(0) translateY(0) !important;
+}
+
+/* Make it calmer on mobile */
+@media (max-width: 768px) {
+  .rs-reveal,
+  .rs-reveal:nth-of-type(even) {
+    transform: translateY(24px) !important;
+  }
+
+  .rs-reveal.rs-visible,
+  .rs-reveal:nth-of-type(even).rs-visible {
+    transform: translateY(0) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rs-reveal,
+  .rs-reveal:nth-of-type(even),
+  .rs-reveal.rs-visible,
+  .rs-reveal:nth-of-type(even).rs-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* RS Entrance Mode C Override - Slower & More Visible */
+.rs-reveal {
+  opacity: 0 !important;
+  transform: translateX(-72px) translateY(18px) !important;
+  transition:
+    opacity 1.25s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.rs-reveal:nth-of-type(even) {
+  transform: translateX(72px) translateY(18px) !important;
+}
+
+.rs-reveal.rs-visible,
+.rs-reveal:nth-of-type(even).rs-visible {
+  opacity: 1 !important;
+  transform: translateX(0) translateY(0) !important;
+}
+
+@media (max-width: 768px) {
+  .rs-reveal,
+  .rs-reveal:nth-of-type(even) {
+    transform: translateY(42px) !important;
+    transition:
+      opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 1s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+
+  .rs-reveal.rs-visible,
+  .rs-reveal:nth-of-type(even).rs-visible {
+    transform: translateY(0) !important;
+  }
+}
+
+/* RS FINAL ENTRANCE SYSTEM - Slow Alternating Slide */
+html,
+body {
+  overflow-x: hidden;
+}
+
+main section.rs-reveal {
+  opacity: 0 !important;
+  filter: none !important;
+  animation: none !important;
+  transition:
+    opacity 2.1s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 2.1s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: opacity, transform;
+}
+
+/* Odd sections slide from left */
+main section.rs-reveal:nth-of-type(odd) {
+  transform: translateX(-120px) translateY(24px) !important;
+}
+
+/* Even sections slide from right */
+main section.rs-reveal:nth-of-type(even) {
+  transform: translateX(120px) translateY(24px) !important;
+}
+
+/* Visible state */
+main section.rs-reveal.rs-visible,
+main section.rs-reveal:nth-of-type(odd).rs-visible,
+main section.rs-reveal:nth-of-type(even).rs-visible {
+  opacity: 1 !important;
+  transform: translateX(0) translateY(0) !important;
+}
+
+/* Mobile: jangan slide kanan-kiri biar tidak aneh */
+@media (max-width: 768px) {
+  main section.rs-reveal,
+  main section.rs-reveal:nth-of-type(odd),
+  main section.rs-reveal:nth-of-type(even) {
+    transform: translateY(56px) !important;
+    transition:
+      opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 1.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+
+  main section.rs-reveal.rs-visible,
+  main section.rs-reveal:nth-of-type(odd).rs-visible,
+  main section.rs-reveal:nth-of-type(even).rs-visible {
+    transform: translateY(0) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main section.rs-reveal,
+  main section.rs-reveal:nth-of-type(odd),
+  main section.rs-reveal:nth-of-type(even),
+  main section.rs-reveal.rs-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* RS Mobile Polish */
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  body {
+    background: #07090d;
+  }
+
+  main {
+    overflow-x: hidden;
+  }
+
+  /* Header */
+  header nav {
+    height: 76px !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  header img {
+    width: 82px !important;
+  }
+
+  /* General section rhythm */
+  main section {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  /* Hero sections */
+  section[class*="pt-[88px]"] {
+    padding-top: 76px !important;
+  }
+
+  /* Big headline */
+  h1.font-tungsten {
+    font-size: clamp(64px, 18vw, 92px) !important;
+    line-height: 0.86 !important;
+    letter-spacing: 0 !important;
+  }
+
+  h2.font-tungsten {
+    font-size: clamp(48px, 14vw, 70px) !important;
+    line-height: 0.92 !important;
+  }
+
+  h3.font-tungsten {
+    font-size: clamp(36px, 10vw, 50px) !important;
+  }
+
+  p {
+    max-width: 100%;
+  }
+
+  /* Mobile text readability */
+  .text-xl {
+    font-size: 17px !important;
+    line-height: 1.75 !important;
+  }
+
+  .text-lg {
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+  }
+
+  /* Buttons */
+  a.rounded-full,
+  button.rounded-full {
+    min-height: 48px;
+  }
+
+  .sm\:flex-row {
+    gap: 12px;
+  }
+
+  /* Cards */
+  article {
+    border-radius: 22px !important;
+  }
+
+  .rounded-\[2rem\] {
+    border-radius: 24px !important;
+  }
+
+  .rounded-2xl {
+    border-radius: 20px !important;
+  }
+
+  /* Reduce large hero min heights */
+  .min-h-\[700px\],
+  .min-h-\[680px\],
+  .min-h-\[640px\],
+  .min-h-\[620px\],
+  .min-h-\[600px\] {
+    min-height: 620px !important;
+  }
+
+  /* Homepage hero slightly taller */
+  #home .min-h-\[660px\],
+  #home .md\:min-h-\[700px\] {
+    min-height: 650px !important;
+  }
+
+  /* Better image crop on mobile */
+  .bg-cover {
+    background-position: center center;
+  }
+
+  /* Hide heavy desktop ornament panels on mobile */
+  .lg\:block {
+    display: none !important;
+  }
+
+  /* CTA bottom boxes */
+  .md\:flex-row {
+    flex-direction: column !important;
+  }
+
+  /* CTA buttons full width inside mobile stacked areas */
+  .inline-flex {
+    text-align: center;
+  }
+
+  /* Footer */
+  footer {
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  h1.font-tungsten {
+    font-size: clamp(58px, 17vw, 78px) !important;
+  }
+
+  h2.font-tungsten {
+    font-size: clamp(44px, 13vw, 62px) !important;
+  }
+
+  main section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .text-\[11px\] {
+    font-size: 10px !important;
+  }
+
+  .tracking-\[0\.24em\],
+  .tracking-\[0\.25em\],
+  .tracking-\[0\.32em\],
+  .tracking-\[0\.35em\] {
+    letter-spacing: 0.16em !important;
+  }
+}
+
+/* RS Mobile Hero Pattern Strip Fix */
+@media (max-width: 768px) {
+  #home .relative.h-24.overflow-hidden {
+    height: 72px !important;
+    margin-top: 0 !important;
+  }
+
+  #home .relative.h-24.overflow-hidden > div:first-child,
+  #home .relative.h-16.overflow-hidden > div:first-child {
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    opacity: 0.72 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #home .relative.h-24.overflow-hidden {
+    height: 64px !important;
+  }
+
+  #home .relative.h-24.overflow-hidden > div:first-child,
+  #home .relative.h-16.overflow-hidden > div:first-child {
+    background-size: 140% auto !important;
+    background-position: center center !important;
+  }
+}
+
+/* RS Mobile Slider */
+.rs-mobile-slider {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.rs-mobile-slider::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .rs-mobile-slider {
+    scroll-padding-left: 24px;
+  }
+}
