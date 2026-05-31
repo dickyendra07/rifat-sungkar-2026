@@ -330,3 +330,197 @@ export function formatDate(date?: string) {
     year: "numeric",
   }).format(new Date(date))
 }
+
+export async function getFeaturedArticles(): Promise<CMSArticle[]> {
+  try {
+    const res = await fetch(
+      `${cmsUrl}/api/articles?depth=2&sort=sortOrder&where[published][equals]=true&where[featuredArticle][equals]=true`,
+      {
+        next: {
+          revalidate: 10,
+        },
+      }
+    )
+
+    if (!res.ok) return []
+
+    const data = (await res.json()) as CMSArticlesResponse
+
+    return data.docs || []
+  } catch {
+    return []
+  }
+}
+
+export type CMSPartner = {
+  id?: string
+  name?: string
+  logo?: CMSMedia
+  websiteUrl?: string
+  tier?: string
+  description?: string
+  active?: boolean
+  showOnHomepage?: boolean
+  showOnFooter?: boolean
+  showOnContactPage?: boolean
+  sortOrder?: number
+}
+
+type CMSPartnersResponse = {
+  docs?: CMSPartner[]
+}
+
+export async function getHomepagePartners(): Promise<CMSPartner[]> {
+  try {
+    const res = await fetch(
+      `${cmsUrl}/api/partners?depth=2&sort=sortOrder&where[active][equals]=true&where[showOnHomepage][equals]=true`,
+      {
+        next: {
+          revalidate: 60,
+        },
+      }
+    )
+
+    if (!res.ok) return []
+
+    const data = (await res.json()) as CMSPartnersResponse
+
+    return data.docs || []
+  } catch {
+    return []
+  }
+}
+
+export async function getFooterPartners(): Promise<CMSPartner[]> {
+  try {
+    const res = await fetch(
+      `${cmsUrl}/api/partners?depth=2&sort=sortOrder&where[active][equals]=true&where[showOnFooter][equals]=true`,
+      {
+        next: {
+          revalidate: 60,
+        },
+      }
+    )
+
+    if (!res.ok) return []
+
+    const data = (await res.json()) as CMSPartnersResponse
+
+    return data.docs || []
+  } catch {
+    return []
+  }
+}
+
+export async function getContactPagePartners(): Promise<CMSPartner[]> {
+  try {
+    const res = await fetch(
+      `${cmsUrl}/api/partners?depth=2&sort=sortOrder&where[active][equals]=true&where[showOnContactPage][equals]=true`,
+      {
+        next: {
+          revalidate: 60,
+        },
+      }
+    )
+
+    if (!res.ok) return []
+
+    const data = (await res.json()) as CMSPartnersResponse
+
+    return data.docs || []
+  } catch {
+    return []
+  }
+}
+
+export function formatPartnerTier(tier?: string) {
+  const labels: Record<string, string> = {
+    "main-partner": "Main Partner",
+    "official-partner": "Official Partner",
+    "supported-by": "Supported By",
+    "media-partner": "Media Partner",
+    "community-partner": "Community Partner",
+  }
+
+  return labels[tier || ""] || "Official Partner"
+}
+
+export type CMSMediaGallerySlide = {
+  image?: CMSMedia
+  caption?: string
+}
+
+export type CMSMediaGalleryItem = {
+  id?: string
+  title?: string
+  category?: string
+  mediaType?: string
+  image?: CMSMedia
+  slides?: CMSMediaGallerySlide[]
+  videoUrl?: string
+  caption?: string
+  relatedEvent?: CMSEvent
+  relatedArticle?: CMSArticle
+  showOnHomepage?: boolean
+  showOnGalleryPage?: boolean
+  published?: boolean
+  sortOrder?: number
+}
+
+type CMSMediaGalleryResponse = {
+  docs?: CMSMediaGalleryItem[]
+}
+
+export async function getHomepageMediaGallery(): Promise<CMSMediaGalleryItem[]> {
+  try {
+    const res = await fetch(
+      `${cmsUrl}/api/media-gallery?depth=2&sort=sortOrder&where[published][equals]=true&where[showOnHomepage][equals]=true`,
+      {
+        next: {
+          revalidate: 60,
+        },
+      }
+    )
+
+    if (!res.ok) return []
+
+    const data = (await res.json()) as CMSMediaGalleryResponse
+
+    return data.docs || []
+  } catch {
+    return []
+  }
+}
+
+export async function getMediaGallery(): Promise<CMSMediaGalleryItem[]> {
+  try {
+    const res = await fetch(
+      `${cmsUrl}/api/media-gallery?depth=2&sort=sortOrder&where[published][equals]=true&where[showOnGalleryPage][equals]=true`,
+      {
+        next: {
+          revalidate: 60,
+        },
+      }
+    )
+
+    if (!res.ok) return []
+
+    const data = (await res.json()) as CMSMediaGalleryResponse
+
+    return data.docs || []
+  } catch {
+    return []
+  }
+}
+
+export function formatMediaGalleryCategory(category?: string) {
+  const labels: Record<string, string> = {
+    campaign: "Campaign",
+    motorsport: "Motorsport",
+    lifestyle: "Lifestyle",
+    "behind-the-scenes": "Behind The Scenes",
+    partner: "Partner",
+  }
+
+  return labels[category || ""] || "Campaign Media"
+}

@@ -1,9 +1,13 @@
 import type { MetadataRoute } from "next";
+import { getArticles, getEvents } from "@/lib/cms";
 
 const baseUrl = "https://inside-rs.com";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  return [
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const events = await getEvents();
+  const articles = await getArticles();
+
+  const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: new Date(),
@@ -23,22 +27,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/events/the-legend-continues`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/events/secret-riding`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),
       changeFrequency: "weekly",
-      priority: 0.7,
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/contact`,
@@ -47,4 +39,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
   ];
+
+  const eventRoutes: MetadataRoute.Sitemap = events
+    .filter((event) => event.slug)
+    .map((event) => ({
+      url: `${baseUrl}/events/${event.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    }));
+
+  const articleRoutes: MetadataRoute.Sitemap = articles
+    .filter((article) => article.slug)
+    .map((article) => ({
+      url: `${baseUrl}/blog/${article.slug}`,
+      lastModified: article.publishedDate ? new Date(article.publishedDate) : new Date(),
+      changeFrequency: "weekly",
+      priority: 0.7,
+    }));
+
+  return [...staticRoutes, ...eventRoutes, ...articleRoutes];
 }

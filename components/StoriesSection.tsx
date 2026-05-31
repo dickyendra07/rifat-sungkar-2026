@@ -1,7 +1,7 @@
 import {
   formatArticleCategory,
-  getArticles,
   getCMSMediaUrl,
+  getFeaturedArticles,
 } from "@/lib/cms";
 
 const fallbackStories = [
@@ -29,7 +29,7 @@ const fallbackStories = [
 ];
 
 export default async function StoriesSection() {
-  const cmsArticles = await getArticles();
+  const cmsArticles = await getFeaturedArticles();
 
   const stories =
     cmsArticles.length > 0

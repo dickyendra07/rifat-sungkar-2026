@@ -1,5 +1,11 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import ContactForm from "@/components/ContactForm";
+import {
+  formatPartnerTier,
+  getCMSMediaUrl,
+  getContactPagePartners,
+} from "@/lib/cms";
 
 const inquiryTypes = [
   {
@@ -118,7 +124,9 @@ export const metadata = {
     "Contact the Rifat Sungkar 2026 team for partnership, sponsorship, media requests, event collaboration, and campaign inquiries.",
 };
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const contactPartners = await getContactPagePartners();
+
   return (
     <main className="min-h-screen bg-[#07090d] text-white">
       <Navbar />
@@ -273,85 +281,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <form className="rounded-[2rem] border border-white/10 bg-[#111820] p-5 shadow-2xl shadow-black/25 md:p-8">
-            <div className="grid gap-4 md:grid-cols-2 md:gap-5">
-              <label className="block">
-                <span className="text-xs font-bold uppercase tracking-[0.22em] text-white/45">
-                  Full Name
-                </span>
-                <input
-                  type="text"
-                  placeholder="Your name"
-                  className="mt-3 h-13 min-h-[52px] w-full rounded-xl border border-white/10 bg-black/25 px-4 text-sm text-white outline-none transition placeholder:text-white/25 focus:border-[#f19ac2] focus:bg-black/35"
-                />
-              </label>
-
-              <label className="block">
-                <span className="text-xs font-bold uppercase tracking-[0.22em] text-white/45">
-                  Email
-                </span>
-                <input
-                  type="email"
-                  placeholder="your@email.com"
-                  className="mt-3 h-13 min-h-[52px] w-full rounded-xl border border-white/10 bg-black/25 px-4 text-sm text-white outline-none transition placeholder:text-white/25 focus:border-[#f19ac2] focus:bg-black/35"
-                />
-              </label>
-
-              <label className="block">
-                <span className="text-xs font-bold uppercase tracking-[0.22em] text-white/45">
-                  Phone / WhatsApp
-                </span>
-                <input
-                  type="text"
-                  placeholder="+62"
-                  className="mt-3 h-13 min-h-[52px] w-full rounded-xl border border-white/10 bg-black/25 px-4 text-sm text-white outline-none transition placeholder:text-white/25 focus:border-[#f19ac2] focus:bg-black/35"
-                />
-              </label>
-
-              <label className="block">
-                <span className="text-xs font-bold uppercase tracking-[0.22em] text-white/45">
-                  Inquiry Type
-                </span>
-                <select
-                  defaultValue=""
-                  className="mt-3 h-13 min-h-[52px] w-full rounded-xl border border-white/10 bg-black/25 px-4 text-sm text-white outline-none transition focus:border-[#f19ac2] focus:bg-black/35"
-                >
-                  <option value="" disabled>
-                    Select inquiry
-                  </option>
-                  <option>Partnership</option>
-                  <option>Media Request</option>
-                  <option>Event Collaboration</option>
-                  <option>General Inquiry</option>
-                </select>
-              </label>
-            </div>
-
-            <label className="mt-5 block">
-              <span className="text-xs font-bold uppercase tracking-[0.22em] text-white/45">
-                Message
-              </span>
-              <textarea
-                placeholder="Tell us about your inquiry..."
-                rows={6}
-                className="mt-3 w-full rounded-xl border border-white/10 bg-black/25 px-4 py-4 text-sm leading-7 text-white outline-none transition placeholder:text-white/25 focus:border-[#f19ac2] focus:bg-black/35"
-              />
-            </label>
-
-            <button
-              type="button"
-              className="mt-6 inline-flex w-full items-center justify-center gap-4 rounded-full bg-gradient-to-r from-[#62d9db] to-[#f19ac2] px-8 py-4 text-[11px] font-black uppercase tracking-[0.24em] text-white shadow-lg shadow-pink-500/20 transition hover:scale-[1.01] md:w-auto"
-            >
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20">
-                →
-              </span>
-              Submit Inquiry
-            </button>
-
-            <p className="mt-5 text-sm leading-6 text-white/38">
-              This form is currently a static layout. We can connect it to email or WhatsApp in the next step.
-            </p>
-          </form>
+          <ContactForm />
         </div>
       </section>
 
@@ -406,6 +336,90 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      {contactPartners.length > 0 ? (
+        <section className="bg-[#07090d] px-6 py-20 md:px-10 lg:px-12">
+          <div className="mx-auto max-w-[1440px]">
+            <div className="mb-12 grid gap-6 lg:grid-cols-[0.8fr_1fr] lg:items-end">
+              <div>
+                <p className="text-sm font-bold uppercase tracking-[0.32em] text-[#f2a0b8]">
+                  Partnership Network
+                </p>
+
+                <h2 className="font-tungsten mt-4 text-6xl font-black uppercase leading-none tracking-normal text-white md:text-7xl">
+                  Connected
+                  <br />
+                  Partners
+                </h2>
+              </div>
+
+              <p className="max-w-xl text-base leading-7 tracking-[0.02em] text-white/62 lg:justify-self-end">
+                Selected partners and collaborators connected to the Inside RS campaign ecosystem.
+              </p>
+            </div>
+
+            <div className="rs-mobile-slider -mx-6 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-4 md:mx-0 md:grid md:grid-cols-2 md:gap-6 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-3">
+              {contactPartners.map((partner) => {
+                const logo = getCMSMediaUrl(partner.logo) || "/images/rs-logo.png";
+
+                return (
+                  <article
+                    key={partner.id || partner.name}
+                    className="group relative min-w-[84%] snap-center overflow-hidden rounded-2xl border border-white/10 bg-[#111820] shadow-2xl shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-[#f19ac2]/45 md:min-w-0"
+                  >
+                    <div className="relative z-10 m-px h-full rounded-2xl bg-[#111820] p-6">
+                      <div className="flex min-h-[110px] items-center justify-center rounded-2xl border border-white/10 bg-white/[0.035] p-6">
+                        <img
+                          src={logo}
+                          alt={partner.name || "Partner"}
+                          className="max-h-16 max-w-[190px] object-contain brightness-0 invert"
+                        />
+                      </div>
+
+                      <div className="mt-6">
+                        <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#f2a0b8]">
+                          {formatPartnerTier(partner.tier)}
+                        </p>
+
+                        <h3 className="font-tungsten mt-3 text-4xl font-black leading-none tracking-normal text-white">
+                          {partner.name}
+                        </h3>
+
+                        {partner.description ? (
+                          <p className="mt-4 text-sm leading-7 tracking-[0.02em] text-white/62">
+                            {partner.description}
+                          </p>
+                        ) : null}
+
+                        {partner.websiteUrl ? (
+                          <a
+                            href={partner.websiteUrl}
+                            target={partner.websiteUrl.startsWith("http") ? "_blank" : undefined}
+                            rel={partner.websiteUrl.startsWith("http") ? "noreferrer" : undefined}
+                            className="mt-7 inline-flex items-center justify-center gap-3 rounded-full border border-white/15 bg-white/[0.04] px-5 py-3 text-[10px] font-black uppercase tracking-[0.2em] text-white/72 transition hover:border-[#f19ac2]/40 hover:text-white"
+                          >
+                            Visit Partner
+                            <span>→</span>
+                          </a>
+                        ) : null}
+                      </div>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+
+            <div className="mt-5 flex items-center justify-center gap-2 md:hidden">
+              {contactPartners.map((partner) => (
+                <span
+                  key={partner.id || partner.name}
+                  className="h-1.5 w-8 rounded-full bg-gradient-to-r from-[#62d9db] to-[#f19ac2] opacity-55"
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <Footer />
     </main>

@@ -1,4 +1,10 @@
-import { getGlobalSettings, getSocialLinks } from "@/lib/cms";
+import {
+  formatPartnerTier,
+  getCMSMediaUrl,
+  getFooterPartners,
+  getGlobalSettings,
+  getSocialLinks,
+} from "@/lib/cms";
 
 const footerLinks = [
   { label: "Home", href: "/" },
@@ -10,6 +16,7 @@ const footerLinks = [
 
 export default async function Footer() {
   const settings = await getGlobalSettings();
+  const footerPartners = await getFooterPartners();
 
   const description =
     settings?.footer?.description ||
@@ -90,6 +97,52 @@ export default async function Footer() {
             </div>
           </div>
         </div>
+
+        {footerPartners.length > 0 ? (
+          <div className="mt-12 border-t border-white/10 pt-10">
+            <div className="mb-6 flex flex-col justify-between gap-3 md:flex-row md:items-end">
+              <div>
+                <p className="text-xs font-black uppercase tracking-[0.28em] text-[#f2a0b8]">
+                  Supported By
+                </p>
+                <h3 className="font-tungsten mt-3 text-4xl font-black leading-none tracking-normal text-white">
+                  Partners
+                </h3>
+              </div>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {footerPartners.map((partner) => {
+                const logo = getCMSMediaUrl(partner.logo) || "/images/rs-logo.png";
+
+                return (
+                  <a
+                    key={partner.id || partner.name}
+                    href={partner.websiteUrl || "#"}
+                    target={partner.websiteUrl?.startsWith("http") ? "_blank" : undefined}
+                    rel={partner.websiteUrl?.startsWith("http") ? "noreferrer" : undefined}
+                    className="group rounded-2xl border border-white/10 bg-white/[0.035] p-4 transition hover:border-[#f19ac2]/35 hover:bg-white/[0.055]"
+                  >
+                    <div className="flex h-16 items-center justify-center rounded-xl bg-black/20 p-3">
+                      <img
+                        src={logo}
+                        alt={partner.name || "Partner"}
+                        className="max-h-10 max-w-[140px] object-contain brightness-0 invert"
+                      />
+                    </div>
+
+                    <p className="mt-4 text-xs font-black uppercase tracking-[0.18em] text-[#62d9db]">
+                      {formatPartnerTier(partner.tier)}
+                    </p>
+                    <p className="mt-2 text-sm font-bold text-white/70 group-hover:text-white">
+                      {partner.name}
+                    </p>
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        ) : null}
 
         <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-7 text-xs font-bold uppercase tracking-[0.18em] text-white/36 md:flex-row md:items-center md:justify-between">
           <p>{copyright}</p>

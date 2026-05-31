@@ -7,6 +7,7 @@ import HeroSection from "@/components/HeroSection";
 import KeyHighlightsSection from "@/components/KeyHighlightsSection";
 import Navbar from "@/components/Navbar";
 import PartnersSection from "@/components/PartnersSection";
+import MediaGallerySection from "@/components/MediaGallerySection";
 import StoriesSection from "@/components/StoriesSection";
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <AboutSection />
       <EventsPreviewSection />
       <StoriesSection />
+      <MediaGallerySection />
       <PartnersSection />
       <FinalCtaSection />
       <Footer />
