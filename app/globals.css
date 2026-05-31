@@ -566,3 +566,10 @@ main section.rs-reveal:nth-of-type(even).rs-visible {
     scroll-padding-left: 24px;
   }
 }
+
+/* Footer should always be visible */
+footer {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+}

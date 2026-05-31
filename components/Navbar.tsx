@@ -1,76 +1,132 @@
 "use client";
 
-import Image from "next/image";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { navItems } from "@/data/homepage";
 
-const socialLinks = [
-  {
-    label: "Instagram",
-    href: "https://instagram.com",
-    icon: (
-      <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 fill-current">
-        <path d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2Zm0 2A3.75 3.75 0 0 0 4 7.75v8.5A3.75 3.75 0 0 0 7.75 20h8.5A3.75 3.75 0 0 0 20 16.25v-8.5A3.75 3.75 0 0 0 16.25 4h-8.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-2.45a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z" />
-      </svg>
-    ),
-  },
-  {
-    label: "Facebook",
-    href: "https://facebook.com",
-    icon: (
-      <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 fill-current">
-        <path d="M14 8.5V6.75c0-.72.28-1.08 1.16-1.08H17V2.2A24.6 24.6 0 0 0 14.32 2C11.65 2 9.82 3.63 9.82 6.63V8.5H6.8V12h3.02v10H14V12h2.87l.46-3.5H14Z" />
-      </svg>
-    ),
-  },
-  {
-    label: "LinkedIn",
-    href: "https://linkedin.com",
-    icon: (
-      <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 fill-current">
-        <path d="M6.94 8.98H3.38V21h3.56V8.98ZM5.16 3A2.06 2.06 0 1 0 5.14 7.12 2.06 2.06 0 0 0 5.16 3ZM20.62 14.1c0-3.23-1.72-5.32-4.54-5.32a3.9 3.9 0 0 0-3.55 1.96h-.05V8.98H9.08V21h3.55v-5.95c0-1.57.3-3.08 2.24-3.08 1.9 0 1.92 1.78 1.92 3.18V21h3.56l.27-6.9Z" />
-      </svg>
-    ),
-  },
+const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Events", href: "/events" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
 ];
+
+const fallbackSocialLinks = {
+  instagramUrl: "https://www.instagram.com/inside__rs/",
+  facebookUrl: "https://www.facebook.com/",
+  linkedinUrl: "https://www.linkedin.com/",
+};
+
+function InstagramIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.8" />
+      <circle cx="12" cy="12" r="3.4" stroke="currentColor" strokeWidth="1.8" />
+      <circle cx="17.4" cy="6.6" r="1" fill="currentColor" />
+    </svg>
+  );
+}
+
+function FacebookIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
+      <path d="M14.2 8.1V6.7c0-.7.5-.9 1-.9h1.6V3.1L14.5 3c-2.6 0-4 1.6-4 4v1.1H8v3h2.5V21h3.1v-9.9h2.6l.4-3h-3.4Z" />
+    </svg>
+  );
+}
+
+function LinkedinIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
+      <path d="M6.5 8.8H3.6V21h2.9V8.8ZM5.1 3C4.1 3 3.4 3.7 3.4 4.6s.7 1.7 1.7 1.7 1.7-.7 1.7-1.7S6.1 3 5.1 3Zm6.5 5.8H8.8V21h2.9v-6.4c0-1.7.8-2.8 2.2-2.8 1.3 0 1.9.9 1.9 2.7V21h2.9v-7c0-3.4-1.8-5.4-4.6-5.4-1.5 0-2.5.7-3.1 1.6h-.1l-.2-1.4Z" />
+    </svg>
+  );
+}
+
+type CMSGlobalSettings = {
+  socialMedia?: {
+    instagramUrl?: string;
+    facebookUrl?: string;
+    linkedinUrl?: string;
+  };
+};
 
 export default function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [socialMedia, setSocialMedia] = useState(fallbackSocialLinks);
 
-  const isItemActive = (href: string) => {
+  useEffect(() => {
+    const cmsUrl = process.env.NEXT_PUBLIC_CMS_URL || "http://localhost:3000";
+
+    async function loadGlobalSettings() {
+      try {
+        const res = await fetch(`${cmsUrl}/api/globals/global-settings?depth=2`);
+
+        if (!res.ok) return;
+
+        const data = (await res.json()) as CMSGlobalSettings;
+
+        setSocialMedia({
+          instagramUrl: data.socialMedia?.instagramUrl?.trim() || fallbackSocialLinks.instagramUrl,
+          facebookUrl: data.socialMedia?.facebookUrl?.trim() || fallbackSocialLinks.facebookUrl,
+          linkedinUrl: data.socialMedia?.linkedinUrl?.trim() || fallbackSocialLinks.linkedinUrl,
+        });
+      } catch {
+        setSocialMedia(fallbackSocialLinks);
+      }
+    }
+
+    loadGlobalSettings();
+  }, []);
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
+  const socialLinks = [
+    {
+      label: "Instagram",
+      href: socialMedia.instagramUrl,
+      icon: <InstagramIcon />,
+    },
+    {
+      label: "Facebook",
+      href: socialMedia.facebookUrl,
+      icon: <FacebookIcon />,
+    },
+    {
+      label: "LinkedIn",
+      href: socialMedia.linkedinUrl,
+      icon: <LinkedinIcon />,
+    },
+  ];
+
+  const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
-    return pathname === href || pathname.startsWith(`${href}/`);
+    return pathname.startsWith(href);
   };
 
   return (
-    <header className="fixed left-0 top-0 z-50 w-full bg-[#07090d]/82 backdrop-blur-md">
-      <nav className="mx-auto grid h-[88px] max-w-[1440px] grid-cols-[1fr_auto] items-center px-6 md:grid-cols-[180px_1fr_180px] md:px-10 lg:px-12">
-        <a href="/" className="flex w-fit items-center">
-          <Image
-            src="/images/rs-logo.png"
-            alt="Rifat Sungkar"
-            width={104}
-            height={32}
-            priority
-            className="h-auto w-[88px] object-contain md:w-[104px]"
-          />
+    <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/5 bg-[#07090d]/84 backdrop-blur-xl">
+      <nav className="mx-auto flex h-[92px] max-w-[1440px] items-center justify-between px-6 md:px-10 lg:px-12">
+        <a href="/" aria-label="Inside RS Home" className="shrink-0">
+          <img src="/images/rs-logo.png" alt="Inside RS" className="h-auto w-28 md:w-32" />
         </a>
 
-        <div className="hidden justify-self-center rounded-full border border-white/10 bg-white/[0.035] p-1 md:flex">
-          {navItems.map((item) => {
-            const isActive = isItemActive(item.href);
+        <div className="hidden rounded-full border border-white/10 bg-white/[0.035] p-1 shadow-2xl shadow-black/20 md:flex">
+          {navLinks.map((item) => {
+            const active = isActive(item.href);
 
             return (
               <a
                 key={item.label}
                 href={item.href}
                 className={[
-                  "rounded-full px-5 py-2.5 text-[11px] font-semibold transition-all duration-300",
-                  isActive
-                    ? "bg-gradient-to-r from-[#62d9db] to-[#f19ac2] text-white shadow-lg shadow-pink-500/15"
-                    : "text-white/68 hover:bg-gradient-to-r hover:from-[#62d9db] hover:to-[#f19ac2] hover:text-white hover:shadow-lg hover:shadow-pink-500/15",
+                  "rounded-full px-6 py-3 text-xs font-black transition-all duration-300",
+                  active
+                    ? "bg-gradient-to-r from-[#62d9db] to-[#f19ac2] text-white shadow-lg shadow-pink-500/20"
+                    : "text-white/68 hover:bg-white/[0.06] hover:text-white",
                 ].join(" ")}
               >
                 {item.label}
@@ -96,29 +152,14 @@ export default function Navbar() {
 
         <button
           type="button"
-          onClick={() => setIsOpen((value) => !value)}
           aria-label="Toggle menu"
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-white/12 text-white md:hidden"
+          onClick={() => setIsOpen((value) => !value)}
+          className="flex h-14 w-14 items-center justify-center rounded-full border border-white/12 text-white md:hidden"
         >
-          <span className="relative h-4 w-5">
-            <span
-              className={[
-                "absolute left-0 top-0 h-0.5 w-5 bg-white transition",
-                isOpen ? "translate-y-[7px] rotate-45" : "",
-              ].join(" ")}
-            />
-            <span
-              className={[
-                "absolute left-0 top-[7px] h-0.5 w-5 bg-white transition",
-                isOpen ? "opacity-0" : "",
-              ].join(" ")}
-            />
-            <span
-              className={[
-                "absolute left-0 top-[14px] h-0.5 w-5 bg-white transition",
-                isOpen ? "-translate-y-[7px] -rotate-45" : "",
-              ].join(" ")}
-            />
+          <span className="grid gap-1.5">
+            <span className="block h-0.5 w-7 bg-white" />
+            <span className="block h-0.5 w-7 bg-white" />
+            <span className="block h-0.5 w-7 bg-white" />
           </span>
         </button>
       </nav>
@@ -130,17 +171,16 @@ export default function Navbar() {
           </div>
 
           <div className="flex flex-col gap-2">
-            {navItems.map((item) => {
-              const isActive = isItemActive(item.href);
+            {navLinks.map((item) => {
+              const active = isActive(item.href);
 
               return (
                 <a
                   key={item.label}
                   href={item.href}
-                  onClick={() => setIsOpen(false)}
                   className={[
                     "rounded-2xl px-5 py-4 text-sm font-bold tracking-[0.04em] transition",
-                    isActive
+                    active
                       ? "bg-gradient-to-r from-[#62d9db] to-[#f19ac2] text-white shadow-lg shadow-pink-500/10"
                       : "border border-white/10 bg-white/[0.035] text-white/70 hover:border-white/20 hover:bg-white/[0.06]",
                   ].join(" ")}
@@ -159,7 +199,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={item.label}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/12 text-white/75"
+                className="flex h-11 flex-1 items-center justify-center rounded-xl border border-white/10 text-white/78 transition hover:border-[#f19ac2]/40 hover:text-white"
               >
                 {item.icon}
               </a>
