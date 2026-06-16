@@ -33,6 +33,11 @@ export const metadata: Metadata = {
       "Official campaign website of Rifat Sungkar 2026, featuring motorsport legacy, family stories, events, lifestyle, and campaign updates.",
     images: ["/images/hero-rifat.png"],
   },
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
