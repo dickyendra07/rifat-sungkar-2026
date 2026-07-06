@@ -12,19 +12,19 @@ const inquiryTypes = [
     title: "Partnership",
     icon: "partner",
     description:
-      "For brands and partners who want to collaborate with Rifat Sungkar 2026 campaign activations.",
+      "Brand dan partner yang ingin berkolaborasi dengan Rifat Sungkar 2026.",
   },
   {
-    title: "Media Request",
+    title: "Media",
     icon: "media",
     description:
-      "For interviews, press coverage, editorial features, media invitations, and campaign publications.",
+      "Wawancara, liputan pers, artikel editorial, media invitation, hingga publikasi Rifat Sungkar 2026.",
   },
   {
-    title: "Event Collaboration",
+    title: "Kolaborasi Event",
     icon: "event",
     description:
-      "For motorsport events, community programs, lifestyle riding activities, and special appearances.",
+      "Event motorsport, program komunitas dan lifestyle, hingga special appearance.",
   },
 ];
 
@@ -106,7 +106,7 @@ const contactDetails = [
     href: "https://wa.me/6281200000000",
   },
   {
-    label: "Location",
+    label: "Lokasi",
     value: "Jakarta, Indonesia",
     href: "#",
   },
@@ -119,9 +119,9 @@ const socialLinks = [
 ];
 
 export const metadata = {
-  title: "Contact Rifat Sungkar 2026 | Partnership Inquiry",
+  title: "Contact Inside RS | Partnership, Media & Event",
   description:
-    "Contact the Rifat Sungkar 2026 team for partnership, sponsorship, media requests, event collaboration, and campaign inquiries.",
+    "Hubungi tim Inside RS untuk partnership, media, sponsorship, event, dan informasi lainnya terkait Rifat Sungkar 2026.",
 };
 
 export default async function ContactPage() {
@@ -144,14 +144,13 @@ export default async function ContactPage() {
               </p>
 
               <h1 className="font-tungsten mt-5 max-w-3xl text-7xl font-black uppercase leading-[0.88] tracking-normal md:text-8xl lg:text-9xl text-white">
-                Let&apos;s Continue
+                Siap Untuk Jadi Bagian
                 <br />
-                The Journey
+                Cerita Berikutnya?
               </h1>
 
               <p className="mt-7 max-w-2xl text-xl leading-9 tracking-[0.02em] text-white/78">
-                For partnership, media, sponsorship, event collaboration, and campaign inquiries,
-                connect with the Rifat Sungkar 2026 team.
+                Hubungi tim Inside RS sekarang untuk semua pertanyaan terkait partnership, media, sponsorship, dan pertanyaan serta informasi lainnya!
               </p>
 
               <div className="mt-9 flex flex-col gap-4 sm:flex-row">
@@ -162,14 +161,14 @@ export default async function ContactPage() {
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20">
                     →
                   </span>
-                  Send Inquiry
+                  Send Your Question
                 </a>
 
                 <a
                   href="#direct-contact"
                   className="inline-flex items-center justify-center rounded-full border border-white/20 bg-black/20 px-8 py-4 text-[11px] font-black uppercase tracking-[0.24em] text-white/85 backdrop-blur-sm transition hover:border-white hover:bg-white hover:text-black"
                 >
-                  Contact Info
+                  Contact Us
                 </a>
               </div>
             </div>
@@ -180,13 +179,13 @@ export default async function ContactPage() {
               </p>
 
               <h2 className="font-tungsten mt-4 text-5xl font-black uppercase leading-none tracking-normal text-white md:text-6xl">
-                Partnership,
+                Untuk Partnership,
                 <br />
-                Media & Event
+                Media, dan Event
               </h2>
 
               <p className="mt-5 text-base leading-7 tracking-[0.02em] text-white/62">
-                Share your inquiry and we will route it to the right campaign contact.
+                Lengkapi data ini dan kami akan menghubungimu!
               </p>
 
               <div className="mt-8 space-y-4">
@@ -242,15 +241,15 @@ export default async function ContactPage() {
         <div className="mx-auto grid max-w-[1440px] gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-10">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.32em] text-[#f2a0b8]">
-              Inquiry Form
+              Ngobrol Yuk!
             </p>
 
             <h2 className="font-tungsten mt-5 max-w-xl text-6xl font-black uppercase leading-[0.92] tracking-normal text-white md:text-7xl">
-              Start the Conversation
+              Lengkapi Data Ini
             </h2>
 
             <p className="mt-6 max-w-lg text-lg leading-8 tracking-[0.02em] text-white/62">
-              Share your inquiry details and the team will get back to you with the next step.
+              Lengkapi data ini dan kami akan menghubungimu untuk kebutuhan partnership, sponsorship, media, event, atau pertanyaan lainnya.
             </p>
 
             <div id="direct-contact" className="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] shadow-xl shadow-black/10 md:mt-10">
@@ -258,7 +257,7 @@ export default async function ContactPage() {
 
               <div className="p-6">
                 <h3 className="font-tungsten text-4xl font-black leading-none tracking-normal text-white">
-                  Direct Contact
+                  Kontak Langsung
                 </h3>
 
                 <div className="mt-6 space-y-5">
@@ -298,13 +297,13 @@ export default async function ContactPage() {
               </p>
 
               <h2 className="font-tungsten mt-4 max-w-xl text-5xl font-black uppercase leading-[0.9] tracking-normal text-white md:text-7xl">
-                Stay Connected
+                Tetap Terhubung
                 <br />
-                With The Journey
+                Dengan Inside RS
               </h2>
 
               <p className="mt-6 max-w-xl text-lg leading-8 tracking-[0.02em] text-white/72">
-                Follow every announcement, campaign update, motorsport moment, and lifestyle story from Rifat Sungkar 2026.
+                Ikuti setiap announcement, update campaign, momen motorsport, dan cerita lifestyle dari Rifat Sungkar 2026.
               </p>
             </div>
 
@@ -330,7 +329,7 @@ export default async function ContactPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20">
                   →
                 </span>
-                Send Inquiry
+                Send Your Question
               </a>
             </div>
           </div>
@@ -354,7 +353,7 @@ export default async function ContactPage() {
               </div>
 
               <p className="max-w-xl text-base leading-7 tracking-[0.02em] text-white/62 lg:justify-self-end">
-                Selected partners and collaborators connected to the Inside RS campaign ecosystem.
+                Partner dan kolaborator yang terhubung dalam ekosistem campaign Inside RS.
               </p>
             </div>
 

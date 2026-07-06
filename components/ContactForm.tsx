@@ -5,9 +5,9 @@ import { FormEvent, useState } from "react";
 const inquiryTypes = [
   { label: "Partnership", value: "partnership" },
   { label: "Sponsorship", value: "sponsorship" },
-  { label: "Media Request", value: "media-request" },
-  { label: "Event Collaboration", value: "event-collaboration" },
-  { label: "General Inquiry", value: "general-inquiry" },
+  { label: "Media", value: "media-request" },
+  { label: "Event", value: "event-collaboration" },
+  { label: "Lainnya", value: "general-inquiry" },
 ];
 
 export default function ContactForm() {
@@ -44,16 +44,16 @@ export default function ContactForm() {
 
       if (!res.ok || !data.success) {
         setStatus("error");
-        setMessage(data.message || "Failed to submit inquiry.");
+        setMessage(data.message || "Pesan belum berhasil terkirim. Silakan coba lagi.");
         return;
       }
 
       setStatus("success");
-      setMessage("Thank you. Your inquiry has been submitted successfully.");
+      setMessage("Terima kasih. Pesanmu sudah berhasil dikirim ke tim Inside RS.");
       form.reset();
     } catch {
       setStatus("error");
-      setMessage("Something went wrong. Please try again.");
+      setMessage("Terjadi kendala. Silakan coba lagi.");
     }
   }
 
@@ -65,13 +65,13 @@ export default function ContactForm() {
       <div className="grid gap-4 md:grid-cols-2 md:gap-5">
         <label className="block">
           <span className="text-xs font-black uppercase tracking-[0.22em] text-white/45">
-            Full Name
+            Nama Lengkap
           </span>
           <input
             name="fullName"
             type="text"
             required
-            placeholder="Your name"
+            placeholder="Namamu"
             className="mt-3 min-h-[52px] w-full rounded-xl border border-white/10 bg-black/25 px-4 text-sm text-white outline-none transition placeholder:text-white/25 focus:border-[#f19ac2] focus:bg-black/35"
           />
         </label>
@@ -84,14 +84,14 @@ export default function ContactForm() {
             name="email"
             type="email"
             required
-            placeholder="you@email.com"
+            placeholder="nama@email.com"
             className="mt-3 min-h-[52px] w-full rounded-xl border border-white/10 bg-black/25 px-4 text-sm text-white outline-none transition placeholder:text-white/25 focus:border-[#f19ac2] focus:bg-black/35"
           />
         </label>
 
         <label className="block">
           <span className="text-xs font-black uppercase tracking-[0.22em] text-white/45">
-            Phone / WhatsApp
+            Hp/WhatsApp
           </span>
           <input
             name="phone"
@@ -103,7 +103,7 @@ export default function ContactForm() {
 
         <label className="block">
           <span className="text-xs font-black uppercase tracking-[0.22em] text-white/45">
-            Inquiry Type
+            Kebutuhan
           </span>
           <select
             name="inquiryType"
@@ -121,13 +121,13 @@ export default function ContactForm() {
 
       <label className="mt-5 block">
         <span className="text-xs font-black uppercase tracking-[0.22em] text-white/45">
-          Message
+          Pesan
         </span>
         <textarea
           name="message"
           required
           rows={6}
-          placeholder="Tell us about your inquiry..."
+          placeholder="Tulis dengan detail apa yang kamu butuhkan dari tim Inside RS"
           className="mt-3 w-full rounded-xl border border-white/10 bg-black/25 px-4 py-4 text-sm leading-7 text-white outline-none transition placeholder:text-white/25 focus:border-[#f19ac2] focus:bg-black/35"
         />
       </label>
@@ -153,7 +153,7 @@ export default function ContactForm() {
         <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20">
           →
         </span>
-        {status === "loading" ? "Submitting..." : "Send Inquiry"}
+        {status === "loading" ? "Mengirim..." : "Send Your Question"}
       </button>
     </form>
   );
