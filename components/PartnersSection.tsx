@@ -38,15 +38,14 @@ export default async function PartnersSection() {
             </p>
 
             <h2 className="font-tungsten mt-4 text-6xl font-black uppercase leading-none tracking-normal text-white md:text-7xl">
-              Built With
+              Official
               <br />
-              Support
+              Partners
             </h2>
           </div>
 
           <p className="max-w-xl text-base leading-7 tracking-[0.02em] text-white/62 lg:justify-self-end">
-            Partners, sponsors, media collaborators, and community supporters that help bring the
-            Inside RS campaign to life.
+            Partner, sponsor, media, dan komunitas yang membantu mewujudkan kegiatan Inside RS.
           </p>
         </div>
 
@@ -114,7 +113,7 @@ export default async function PartnersSection() {
             <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20">
               →
             </span>
-            Become a Partner
+            Be Our Partner Now!
           </a>
         </div>
       </div>

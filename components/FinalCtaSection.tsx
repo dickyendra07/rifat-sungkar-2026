@@ -23,15 +23,13 @@ export default function FinalCtaSection() {
             <div className="relative z-10 flex min-h-[600px] flex-col justify-end px-6 pb-8 pt-20 md:px-8 lg:px-10 lg:pr-[350px]">
               <div className="mb-8 max-w-[760px]">
                 <h2 className="font-tungsten max-w-3xl text-6xl font-black uppercase leading-[0.9] tracking-normal text-white md:text-8xl">
-                  Ready To Continue
+                  Siap Untuk Cerita
                   <br />
-                  The Journey?
+                  Seru Berikutnya?
                 </h2>
 
                 <p className="mt-5 max-w-[540px] text-lg leading-7 tracking-[0.02em] text-white/88">
-                  A campaign built around speed, legacy,
-                  <br className="hidden md:block" />
-                  family, and the spirit of Indonesian motorsport.
+                  Temukan semua hal tentang balapan, keluarga, kecepatan hingga semangat motorsport Indonesia bersama Rifat Sungkar.
                 </p>
               </div>
 
@@ -41,9 +39,9 @@ export default function FinalCtaSection() {
 
                 <div className="relative z-10 flex w-full flex-col md:flex-row md:items-center md:justify-between">
                   <p className="px-8 py-7 font-tungsten text-4xl font-black leading-none tracking-normal text-[#07090d] drop-shadow-sm md:px-10 md:text-5xl">
-                    Ready to experience the next
+                    Satu Klik untuk
                     <br />
-                    chapter?
+                    Lebih Dekat!
                   </p>
 
                   <a
@@ -53,7 +51,7 @@ export default function FinalCtaSection() {
                     <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20">
                       →
                     </span>
-                    Discover Events
+                    Discover The Story Now
                   </a>
                 </div>
               </div>

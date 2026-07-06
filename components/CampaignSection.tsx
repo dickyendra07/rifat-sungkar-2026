@@ -12,23 +12,31 @@ export default function CampaignSection() {
 
         <div>
           <p className="text-sm font-bold text-[#f2a0b8]">The Campaign</p>
-          <h2 className="font-tungsten mt-2 text-5xl font-black leading-none tracking-[-0.04em] text-white md:text-5xl">
-            More Than a Race. A Legacy in Motion.
+
+          <h2 className="font-tungsten mt-2 text-5xl font-black uppercase leading-none tracking-normal text-white md:text-6xl">
+            Bukan Sekadar Kecepatan, Balapan Jadi Warisan Tanpa Batasan
           </h2>
+
           <div className="mt-5 space-y-4 text-base leading-7 text-white/75">
             <p>
-              Rifat Sungkar 2026: The Legend Continues is a campaign built around speed, family,
-              and legacy. It brings together two powerful stories: a cross-generation race between
-              Rifat Sungkar and El Mayka, and an exclusive riding journey with Sissy Priscillia.
+              Terinspirasi dari prestasi turun temurun keluarga Sungkar, Rifat Sungkar 2026:
+              The Legend Continues merupakan cerita yang kini digarap bersama El Mayka dan
+              Secret Riding bersama Sissy Priscillia lewat pengalaman balapan dan riding yang
+              jarang terekspos kamera sebelumnya.
             </p>
+
             <p>
-              This is not only about motorsport. It is about passing down passion, celebrating
-              togetherness, and continuing a legacy that has shaped Indonesian racing culture.
+              Ini bukan sekadar kecepatan di lintasan, namun cara melestarikan cita-cita,
+              merayakan kebersamaan, serta mengatasi kegagalan yang membuktikan bahwa warisan
+              keluarga dan kemenangan tidak terhenti pada satu generasi.
             </p>
           </div>
 
-          <a href="/events" className="mt-7 inline-flex rounded-full bg-gradient-to-r from-[#62d9db] to-[#f19ac2] px-8 py-3 text-[11px] font-black uppercase tracking-[0.22em] text-white">
-            Discover The Story
+          <a
+            href="/about"
+            className="mt-7 inline-flex rounded-full bg-gradient-to-r from-[#62d9db] to-[#f19ac2] px-8 py-3 text-[11px] font-black uppercase tracking-[0.22em] text-white"
+          >
+            Discover The Story Now
           </a>
         </div>
       </div>

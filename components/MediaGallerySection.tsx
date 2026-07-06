@@ -85,15 +85,14 @@ export default async function MediaGallerySection() {
             </p>
 
             <h2 className="font-tungsten mt-4 text-6xl font-black uppercase leading-none tracking-normal text-white md:text-7xl">
-              Campaign
+              Visual
               <br />
-              Moments
+              Stories
             </h2>
           </div>
 
           <p className="max-w-xl text-base leading-7 tracking-[0.02em] text-white/62 lg:justify-self-end">
-            A curated visual collection from Inside RS campaign moments, events, lifestyle stories,
-            and behind-the-scenes content.
+            Sebuah cerita dengan visual yang nyata. Lihat lebih dekat semua momen seru Inside RS dari lensa kamera.
           </p>
         </div>
 

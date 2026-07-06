@@ -11,7 +11,7 @@ const fallbackEvents = [
     eyebrow: "The Legend Continues",
     category: "family-legacy",
     description:
-      "A cross-generation racing moment between father and son. This event celebrates the passion passed from Rifat Sungkar to El Mayka, bringing legacy, competition, and family pride onto the same track.",
+      "Balapan lintas generasi antara ayah dan anak dengan bakat dan semangat yang diteruskan turun temurun di track balap dari Rifat Sungkar ke El Mayka.",
     image: "/images/rs-about-front.png",
   },
   {
@@ -20,7 +20,7 @@ const fallbackEvents = [
     eyebrow: "Secret Riding",
     category: "lifestyle-riding",
     description:
-      "An exclusive riding journey that captures the lifestyle side of the Sungkar family. Built around adventure, freedom, and togetherness, Secret Riding brings a more personal story to the open road.",
+      "Road trip eksklusif, penuh tantangan dan petualangan oleh Rifat Sungkar dan Sissy Priscillia menjelajahi berbagai spot rahasia di Indonesia yang belum pernah dikunjungi sebelumnya.",
     image: "/images/rs-lifestyle.png",
   },
 ];
@@ -46,9 +46,15 @@ export default async function EventsPreviewSection() {
   return (
     <section id="events" className="bg-[#07090d] px-6 py-20 md:px-10 lg:px-12">
       <div className="mx-auto max-w-[1440px]">
-        <h2 className="font-tungsten mb-12 text-center text-5xl font-black tracking-normal text-white md:text-6xl">
-          Events Preview
-        </h2>
+        <div className="mb-12 text-center">
+          <p className="text-sm font-bold uppercase tracking-[0.32em] text-[#f2a0b8]">
+            Events Preview
+          </p>
+
+          <h2 className="font-tungsten mt-4 text-center text-5xl font-black uppercase tracking-normal text-white md:text-6xl">
+            The Legend Continues
+          </h2>
+        </div>
 
         <div className="rs-mobile-slider -mx-6 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-4 md:mx-0 md:grid md:grid-cols-2 md:gap-8 md:overflow-visible md:px-0 md:pb-0">
           {events.map((event) => (
@@ -94,7 +100,7 @@ export default async function EventsPreviewSection() {
                   >
                     <div className="flex items-center justify-between gap-4 px-5 py-4">
                       <span className="text-[11px] font-black uppercase tracking-[0.22em] text-[#07090d]">
-                        View Event Details
+                        See What's Next
                       </span>
 
                       <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#07090d] text-sm text-white">

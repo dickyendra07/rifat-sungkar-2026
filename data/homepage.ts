@@ -11,32 +11,32 @@ export const keyHighlights = [
     title: "Legacy",
     image: "/images/rs-legacy.png",
     description:
-      "A tribute to Rifat Sungkar's journey as one of Indonesia's most respected motorsport figures.",
+      "Semua hal tentang perjalanan Rifat Sungkar sebagai salah satu ikon balap melegenda di dunia motorsport Indonesia.",
   },
   {
     title: "Family",
     image: "/images/rs-family.png",
     description:
-      "A personal story of passion shared between Rifat, El Mayka, and Sissy Priscillia.",
+      "Cerita berharga penuh kebersamaan saat balapan antara Rifat Sungkar, El Mayka, dan juga Sissy Priscillia.",
   },
   {
     title: "Motorsport",
     image: "/images/rs-motorsport.png",
     description:
-      "A high-energy celebration of racing culture, performance, discipline, and competition.",
+      "Performa yang penuh keseruan serta memacu adrenalin dari berbagai balapan dan kompetisi dari kultur motorsport.",
   },
   {
     title: "Lifestyle",
     image: "/images/rs-lifestyle.png",
     description:
-      "A cinematic riding experience that brings freedom, adventure, and family bonding to the road.",
+      "Pengalaman riding keluarga Sungkar yang dibungkus dengan momen sinematik, menampilkan sisi emosional dan family bonding yang jarang terlihat sebelumnya.",
   },
 ];
 
 export const achievementHighlights = [
-  "8x - National Champion",
-  "WRC - World Rally Championship Experience",
-  "2026 - The Next Chapter Begins",
+  "8x - Juara Nasional",
+  "WRC - Berpengalaman di World Rally Championship",
+  "2026 - Gelar Juara yang Dinanti-nantikan!",
 ];
 
 export const events = [
@@ -44,36 +44,36 @@ export const events = [
     eyebrow: "The Legend Continues",
     title: "Rifat Sungkar x El Mayka",
     description:
-      "A cross-generation racing moment between father and son. This event celebrates the passion passed from Rifat Sungkar to El Mayka, bringing legacy, competition, and family pride onto the same track.",
-    buttonLabel: "Enter The Circuit",
+      "Balapan lintas generasi antara ayah dan anak dengan bakat dan semangat yang diteruskan turun temurun di track balap dari Rifat Sungkar ke El Mayka.",
+    buttonLabel: "See What's Next",
   },
   {
     eyebrow: "Secret Riding",
     title: "Rifat Sungkar x Sissy Priscillia",
     description:
-      "An exclusive riding journey that captures the lifestyle side of the Sungkar family. Built around adventure, freedom, and togetherness, Secret Riding brings a more personal story to the open road.",
-    buttonLabel: "Join The Journey",
+      "Road trip eksklusif, penuh tantangan dan petualangan oleh Rifat Sungkar dan Sissy Priscillia menjelajahi berbagai spot rahasia di Indonesia yang belum pernah dikunjungi sebelumnya.",
+    buttonLabel: "See What's Next",
   },
 ];
 
 export const stories = [
   {
     category: "Legacy",
-    title: "Why Legacy Matters in Motorsport",
+    title: "Cerita di Balik Warisan Balap",
     description:
-      "Motorsport is built on more than speed. It is shaped by discipline, values, mentorship, and the courage to pass passion from one generation to another.",
+      "Kisah dari lintasan balap, nilai keluarga, mentorship, dan semangat motorsport yang terus diwariskan dari generasi ke generasi.",
   },
   {
     category: "Motorsport",
-    title: "Inside The Legend Continues",
+    title: "Behind The Legend Continues",
     description:
-      "A closer look at the preparation, energy, and emotional story behind the upcoming cross-generation race between Rifat and El Mayka.",
+      "Persiapan, energi, dan momen emosional di balik cerita balapan lintas generasi antara Rifat Sungkar dan El Mayka.",
   },
   {
     category: "Lifestyle",
-    title: "Secret Riding and the Freedom of the Open Road",
+    title: "Secret Riding dan Cerita Perjalanan",
     description:
-      "A journey that blends adventure, family bonding, and the cinematic lifestyle side of automotive culture.",
+      "Road trip eksklusif yang memadukan petualangan, family bonding, dan visual sinematik dari sisi lifestyle keluarga Sungkar.",
   },
 ];
 

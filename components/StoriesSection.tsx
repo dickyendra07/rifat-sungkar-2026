@@ -6,25 +6,25 @@ import {
 
 const fallbackStories = [
   {
-    title: "Why Legacy Matters in Motorsport",
-    slug: "why-legacy-matters-in-motorsport",
+    title: "Cerita di Balik Warisan Balap",
+    slug: "cerita-di-balik-warisan-balap",
     category: "family-legacy",
     excerpt:
-      "Motorsport is built on more than speed. It is shaped by discipline, values, mentorship, and the courage to pass passion from one generation to another.",
+      "Kisah dari lintasan balap, nilai keluarga, mentorship, dan semangat motorsport yang terus diwariskan dari generasi ke generasi.",
   },
   {
-    title: "Inside The Legend Continues",
-    slug: "inside-the-legend-continues",
+    title: "Behind The Legend Continues",
+    slug: "behind-the-legend-continues",
     category: "motorsport",
     excerpt:
-      "A closer look at the preparation, energy, and emotional story behind the upcoming cross-generation race between Rifat and El Mayka.",
+      "Persiapan, energi, dan momen emosional di balik cerita balapan lintas generasi antara Rifat Sungkar dan El Mayka.",
   },
   {
-    title: "Secret Riding and the Freedom of the Open Road",
-    slug: "secret-riding-and-the-freedom-of-the-open-road",
+    title: "Secret Riding dan Cerita Perjalanan",
+    slug: "secret-riding-dan-cerita-perjalanan",
     category: "lifestyle",
     excerpt:
-      "A journey that blends adventure, family bonding, and the cinematic lifestyle side of automotive culture.",
+      "Road trip eksklusif yang memadukan petualangan, family bonding, dan visual sinematik dari sisi lifestyle keluarga Sungkar.",
   },
 ];
 
@@ -60,13 +60,13 @@ export default async function StoriesSection() {
             </p>
 
             <h2 className="max-w-3xl text-5xl font-black leading-tight tracking-[-0.04em] text-white md:text-6xl">
-              Follow the Journey Behind the Campaign
+              Cerita di Belakang Layar
             </h2>
           </div>
 
           <p className="max-w-xl text-base leading-7 tracking-[0.02em] text-white/62 lg:justify-self-end">
-            Explore stories from the track, behind-the-scenes moments, motorsport insights, and
-            lifestyle updates from Inside RS.
+            Semua kisah dari lintasan balap, behind the scenes, edukasi dan insights motorsport,
+            serta update lifestyle dari Inside RS.
           </p>
         </div>
 
@@ -114,21 +114,12 @@ export default async function StoriesSection() {
                     href={`/blog/${story.slug}`}
                     className="mt-7 inline-flex items-center justify-center gap-3 rounded-full border border-white/15 bg-white/[0.04] px-5 py-3 text-[10px] font-black uppercase tracking-[0.2em] text-white/72 transition hover:border-[#f19ac2]/40 hover:text-white"
                   >
-                    Read Story
+                    Read More
                     <span>→</span>
                   </a>
                 </div>
               </div>
             </article>
-          ))}
-        </div>
-
-        <div className="mt-5 flex items-center justify-center gap-2 md:hidden">
-          {stories.map((story) => (
-            <span
-              key={story.slug}
-              className="h-1.5 w-8 rounded-full bg-gradient-to-r from-[#62d9db] to-[#f19ac2] opacity-55"
-            />
           ))}
         </div>
 
@@ -140,7 +131,7 @@ export default async function StoriesSection() {
             <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20">
               →
             </span>
-            View All Stories
+            Read More
           </a>
         </div>
       </div>

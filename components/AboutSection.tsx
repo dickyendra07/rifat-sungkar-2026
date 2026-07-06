@@ -28,24 +28,25 @@ export default function AboutSection() {
 
         <div>
           <p className="text-base font-bold tracking-[0.16em] text-[#f2b0a3]">
-            About Rifat Sungkar
+            Tentang Rifat Sungkar
           </p>
 
           <h2 className="font-tungsten mt-6 max-w-[680px] text-5xl font-black uppercase leading-[0.95] tracking-normal text-white md:text-7xl">
-            A Champion Whose Journey Goes Beyond the Finish Line
+            Juara yang Tak Pernah Berhenti di Garis Finish
           </h2>
 
           <div className="mt-8 max-w-[760px] space-y-5 text-base leading-8 tracking-[0.02em] text-white/78 md:text-xl md:leading-9">
             <p>
-              Rifat Sungkar has built a legacy through discipline, courage, and passion for
-              motorsport. Known as an 8-time national champion with experience on the world rally
-              stage, Rifat continues to inspire the next generation of drivers and automotive
-              enthusiasts across Indonesia.
+              Selama karirnya, Rifat Sungkar membangun warisan untuk keluarganya lewat
+              keberanian, kedisiplinan, dan semangat yang tak pernah luntur akan dunia
+              motorsport. Dikenal sebagai 8 kali Juara Nasional di balapan rally, Rifat Sungkar
+              terus menjadi inspirasi bagi kalangan pembalap dan penggiat otomotif muda di
+              seluruh Indonesia.
             </p>
 
             <p>
-              In 2026, his story continues through a campaign that brings together achievement,
-              family, and the future of motorsport.
+              Tahun ini, cerita melegendanya berlanjut lewat Rifat Sungkar 2026: The Legend
+              Continues yang menyatukan prestasi, keluarga, serta masa depan dunia otomotif.
             </p>
           </div>
 
