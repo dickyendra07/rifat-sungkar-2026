@@ -4,50 +4,54 @@ import Navbar from "@/components/Navbar";
 const achievements = [
   {
     number: "8x",
-    label: "National Champion",
-    description: "A proven record built through years of discipline, competition, and consistency.",
+    label: "Juara Nasional",
+    description:
+      "Prestasi yang telah diraih sebagai bukti kredibilitas dan usaha yang nyata sepanjang karir.",
   },
   {
     number: "WRC",
-    label: "World Rally Experience",
-    description: "Experience on the world rally stage, representing Indonesian motorsport beyond borders.",
+    label: "World Rally Championship",
+    description:
+      "Berpengalaman di World Rally Championship sebagai bagian dari perjalanan motorsport yang lebih luas.",
   },
   {
     number: "2026",
-    label: "The Next Chapter",
-    description: "A new campaign era that connects motorsport, family, legacy, and lifestyle.",
+    label: "Gelar Juara yang Dinanti-nantikan!",
+    description:
+      "Babak baru Rifat Sungkar 2026 yang menyatukan prestasi, keluarga, serta masa depan dunia otomotif.",
   },
   {
     number: "RS",
     label: "Family Legacy",
-    description: "A personal story that connects racing culture, family values, and the next generation.",
+    description:
+      "Cerita keluarga Sungkar yang penuh value dari generasi ke generasi.",
   },
 ];
 
 const timeline = [
   {
     year: "Legacy",
-    title: "Built Through Motorsport",
+    title: "Berawal dari Motorsport",
     description:
-      "Rifat Sungkar has built his name through speed, precision, discipline, and a deep passion for motorsport.",
+      "Rifat Sungkar meniti karirnya lewat kecepatan, presisi, disiplin, dan semangat yang tinggi di dunia motorsport.",
   },
   {
     year: "Champion",
-    title: "A Proven Competitive Journey",
+    title: "Bukti Nyata Sang Juara",
     description:
-      "Known as an 8-time national champion, Rifat continues to be one of Indonesia's respected motorsport figures.",
+      "Dikenal sebagai 8 kali Juara Nasional, Rifat Sungkar terus menjadi tokoh motorsport yang dipercaya dan disegani di Indonesia.",
   },
   {
     year: "Family",
-    title: "A Story Beyond the Track",
+    title: "Peran di Luar Balapan",
     description:
-      "His journey is not only about racing, but also about family, values, mentorship, and passing passion forward.",
+      "Kisah Rifat Sungkar bukan hanya sekedar balapan, melainkan sebagai seorang ayah yang mengajarkan nilai sportivitas, kekeluargaan, kebersamaan, tanggung jawab, mentorship, hingga cita-cita dan semangat yang diwariskan ke keluarga.",
   },
   {
     year: "2026",
-    title: "The Legend Continues",
+    title: "Memperkenalkan Dua Proyek Terbaru",
     description:
-      "The 2026 campaign introduces a new chapter through Rifat, El Mayka, and Sissy Priscillia.",
+      "Memperkenalkan dua proyek terbaru Rifat Sungkar selama tahun 2026 bersama El Mayka dan Sissy Priscillia.",
   },
 ];
 
@@ -55,29 +59,29 @@ const values = [
   {
     title: "Discipline",
     description:
-      "Motorsport requires focus, preparation, consistency, and the courage to perform under pressure.",
+      "Di dunia motorsport atau balapan, fokus, disiplin, persiapan yang teliti, konsistensi, dan keberanian menjadi kunci untuk tetap berperforma di bawah tekanan.",
   },
   {
     title: "Legacy",
     description:
-      "A story that continues through values, mentorship, family, and the next generation of racing culture.",
+      "Nilai-nilai sportivitas, kekeluargaan, kebersamaan, tanggung jawab, mentorship, hingga cita-cita dan semangat yang diwariskan pada kultur balapan.",
   },
   {
     title: "Family",
     description:
-      "The campaign highlights a personal side of Rifat through El Mayka and Sissy Priscillia.",
+      "Menuangkan cerita yang lebih intim dan personal di antara Rifat Sungkar bersama El Mayka dan Sissy Priscillia.",
   },
   {
     title: "Passion",
     description:
-      "A lifelong connection to automotive culture, competition, exploration, and the open road.",
+      "Semangat yang tak putus dan terus dibawa untuk dunia otomotif serta balapan ditambah rasa penasaran yang tinggi akan hal-hal baru.",
   },
 ];
 
 export const metadata = {
-  title: "About Rifat Sungkar | Motorsport Legacy",
+  title: "Tentang Rifat Sungkar | Inside RS",
   description:
-    "Discover Rifat Sungkar's motorsport journey, achievements, family legacy, and the story behind The Legend Continues campaign.",
+    "Kenali perjalanan Rifat Sungkar, warisan motorsport, nilai keluarga, dan campaign Inside RS 2026.",
 };
 
 export default function AboutPage() {
@@ -86,7 +90,7 @@ export default function AboutPage() {
       <Navbar />
 
       <section className="rs-reveal relative overflow-hidden bg-[#07090d] pt-[88px]">
-        <div className="relative min-h-[700px] rs-kenburns-bg bg-[url('/images/rs-about-front.png')] rs-kenburns-bg bg-cover bg-center">
+        <div className="relative min-h-[700px] rs-kenburns-bg bg-[url('/images/rs-about-front.png')] bg-cover bg-center">
           <div className="absolute inset-0 bg-black/48" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/84 via-black/48 to-black/25" />
           <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#07090d] to-transparent" />
@@ -97,16 +101,17 @@ export default function AboutPage() {
                 About Rifat Sungkar
               </p>
 
-              <h1 className="font-tungsten mt-5 max-w-4xl text-7xl font-black uppercase leading-[0.86] tracking-normal md:text-8xl lg:text-9xl text-white">
-                A Champion
+              <h1 className="font-tungsten mt-5 max-w-4xl text-7xl font-black uppercase leading-[0.86] tracking-normal text-white md:text-8xl lg:text-9xl">
+                Juara yang Tak Pernah
                 <br />
-                Beyond the Finish Line
+                Berhenti di Garis Finish
               </h1>
 
               <p className="mt-7 max-w-2xl text-xl leading-9 tracking-[0.02em] text-white/80">
-                Rifat Sungkar is a name built through discipline, courage, and a lifelong passion
-                for motorsport. His journey continues through a new campaign that connects
-                achievement, family, and the future of Indonesian racing culture.
+                Rifat Sungkar membangun nama dan karirnya lewat keberanian, kedisiplinan, dan
+                semangat yang tak pernah luntur akan dunia motorsport. Warisan inilah yang
+                diturunkan dari generasi ke generasi untuk menyatukan prestasi, keluarga, serta
+                masa depan kultur balapan di Indonesia.
               </p>
 
               <div className="mt-9 flex flex-col gap-4 sm:flex-row">
@@ -117,32 +122,32 @@ export default function AboutPage() {
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20">
                     →
                   </span>
-                  Discover His Legacy
+                  Discover The Legacy
                 </a>
 
                 <a
                   href="/events"
                   className="inline-flex items-center justify-center rounded-full border border-white/20 bg-black/20 px-8 py-4 text-[11px] font-black uppercase tracking-[0.24em] text-white/85 backdrop-blur-sm transition hover:border-white hover:bg-white hover:text-black"
                 >
-                  Explore Events
+                  Find The Next Event
                 </a>
               </div>
             </div>
 
             <div className="rounded-[2rem] border border-white/10 bg-black/35 p-7 shadow-2xl shadow-black/35 backdrop-blur-md">
               <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#62d9db]">
-                Profile Essence
+                Inside RS
               </p>
 
               <h2 className="font-tungsten mt-4 text-5xl font-black uppercase leading-none tracking-normal text-white md:text-6xl">
-                Speed,
+                Legacy,
                 <br />
-                Family & Legacy
+                Family & Motorsport
               </h2>
 
               <p className="mt-5 text-base leading-7 tracking-[0.02em] text-white/62">
-                The 2026 campaign presents Rifat as a champion, family man, mentor, and figure
-                who continues to inspire the next generation.
+                Rifat Sungkar 2026 menghadirkan cerita tentang prestasi, keluarga, mentorship,
+                dan semangat balapan yang terus diwariskan.
               </p>
             </div>
           </div>
@@ -175,24 +180,26 @@ export default function AboutPage() {
 
           <div>
             <p className="text-base font-bold tracking-[0.16em] text-[#f2b0a3]">
-              The Legacy
+              The Journey
             </p>
 
-            <h2 className="font-tungsten mt-6 max-w-[680px] text-6xl font-black uppercase leading-[0.95] tracking-normal md:text-7xl text-white">
-              A Journey That Goes Beyond Racing
+            <h2 className="font-tungsten mt-6 max-w-[680px] text-6xl font-black uppercase leading-[0.95] tracking-normal text-white md:text-7xl">
+              Sebuah Perjalanan Kehidupan yang Lebih dari Sekedar Balapan
             </h2>
 
             <div className="mt-8 max-w-[760px] space-y-6 text-xl leading-9 tracking-[0.02em] text-white/78">
               <p>
-                Rifat Sungkar has built a legacy through discipline, courage, and passion for
-                motorsport. Known as an 8-time national champion with experience on the world
-                rally stage, Rifat continues to inspire the next generation of drivers and
-                automotive enthusiasts across Indonesia.
+                Selama berkarir di dunia balap, Rifat Sungkar menempa warisan lewat keberanian,
+                kedisiplinan, dan semangat motorsport yang kini diteruskan turun temurun, dari
+                generasi ke generasi. Berprestasi sebagai 8 kali Juara Nasional di balapan rally,
+                Rifat Sungkar tetap menjadi inspirasi bagi kalangan pembalap dan penggiat
+                otomotif muda di seluruh Indonesia.
               </p>
 
               <p>
-                In 2026, his story continues through a campaign that brings together achievement,
-                family, lifestyle, and the future of motorsport.
+                Tahun ini, cerita melegendanya berlanjut lewat Rifat Sungkar 2026: The Legend
+                Continues dan Secret Riding dalam satu campaign yang menyatukan prestasi,
+                keluarga, serta masa depan dunia otomotif.
               </p>
             </div>
           </div>
@@ -209,13 +216,13 @@ export default function AboutPage() {
                 Achievement Highlights
               </p>
               <h2 className="font-tungsten mt-4 text-6xl font-black uppercase leading-none tracking-normal text-white md:text-7xl">
-                Built by Results
+                Kemenangan di Lintasan
               </h2>
             </div>
 
             <p className="max-w-2xl text-base leading-7 tracking-[0.02em] text-white/62 lg:justify-self-end">
-              Key achievements that shape the credibility and emotional strength behind the 2026
-              campaign.
+              Prestasi yang telah diraih sebagai bukti kredibilitas dan usaha yang nyata
+              sepanjang karir.
             </p>
           </div>
 
@@ -243,6 +250,15 @@ export default function AboutPage() {
               </article>
             ))}
           </div>
+
+          <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.035] p-6">
+            <p className="text-sm font-bold uppercase tracking-[0.32em] text-[#f2a0b8]">
+              RS Family Legacy
+            </p>
+            <h3 className="font-tungsten mt-3 text-4xl font-black uppercase leading-none tracking-normal text-white md:text-5xl">
+              Cerita Keluarga Sungkar yang Penuh Value dari Generasi ke Generasi!
+            </h3>
+          </div>
         </div>
       </section>
 
@@ -252,8 +268,8 @@ export default function AboutPage() {
             <p className="text-sm font-bold uppercase tracking-[0.32em] text-[#f2a0b8]">
               Career Journey
             </p>
-            <h2 className="font-tungsten mt-4 max-w-3xl text-6xl font-black uppercase leading-[0.9] tracking-normal md:text-7xl text-white">
-              From Champion to the Next Chapter
+            <h2 className="font-tungsten mt-4 max-w-3xl text-6xl font-black uppercase leading-[0.9] tracking-normal text-white md:text-7xl">
+              Membangun Masa Depan Lewat Semangat Juara
             </h2>
           </div>
 
@@ -285,7 +301,7 @@ export default function AboutPage() {
               Campaign Values
             </p>
             <h2 className="font-tungsten mt-4 text-6xl font-black uppercase leading-[0.9] tracking-normal text-white md:text-7xl">
-              The Values Behind the Story
+              Value dan Prinsip
             </h2>
           </div>
 
@@ -310,27 +326,27 @@ export default function AboutPage() {
 
       <section className="rs-reveal px-6 pb-24 pt-10 md:px-10 lg:px-12">
         <div className="relative mx-auto max-w-[1440px] overflow-hidden rounded-[2rem] border border-white/10 bg-[#111820]">
-          <div className="absolute inset-0 rs-kenburns-bg bg-[url('/images/rs-cta-homepage.png')] rs-kenburns-bg bg-cover bg-center opacity-65" />
+          <div className="absolute inset-0 rs-kenburns-bg bg-[url('/images/rs-cta-homepage.png')] bg-cover bg-center opacity-65" />
           <div className="absolute inset-0 bg-black/55" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/30" />
 
           <div className="relative z-10 grid gap-10 p-8 md:p-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
             <div>
               <p className="text-sm font-bold uppercase tracking-[0.32em] text-[#f2a0b8]">
-                Continue the Story
+                Saatnya Lanjutkan Cerita
               </p>
 
-              <h2 className="font-tungsten mt-4 max-w-xl text-6xl font-black uppercase leading-[0.9] tracking-normal md:text-7xl text-white">
-                Discover the 2026
+              <h2 className="font-tungsten mt-4 max-w-xl text-6xl font-black uppercase leading-[0.9] tracking-normal text-white md:text-7xl">
+                Temukan Seluruh Kegiatan
                 <br />
-                Campaign Events
+                Inside RS Selama 2026!
               </h2>
             </div>
 
             <div>
               <p className="max-w-xl text-lg leading-8 tracking-[0.02em] text-white/72">
-                Explore the two main campaign stories: a cross-generation racing moment with El
-                Mayka and a cinematic riding journey with Sissy Priscillia.
+                Petualangan yang menghadirkan balapan lintas generasi antara Rifat Sungkar dan
+                El Mayka serta road trip eksklusif penuh tantangan bersama Sissy Priscillia.
               </p>
 
               <div className="mt-7 flex flex-col gap-4 sm:flex-row">
@@ -341,14 +357,14 @@ export default function AboutPage() {
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20">
                     →
                   </span>
-                  Explore Events
+                  Explore The Journey Now
                 </a>
 
                 <a
                   href="/contact"
                   className="inline-flex items-center justify-center rounded-full border border-white/20 bg-black/20 px-8 py-4 text-[11px] font-black uppercase tracking-[0.24em] text-white/85 backdrop-blur-sm transition hover:border-white hover:bg-white hover:text-black"
                 >
-                  Contact Team
+                  Contact Us
                 </a>
               </div>
             </div>
