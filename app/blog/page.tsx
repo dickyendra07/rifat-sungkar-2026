@@ -10,31 +10,31 @@ import {
 
 const fallbackArticles = [
   {
-    title: "Why Legacy Matters in Motorsport",
-    slug: "why-legacy-matters-in-motorsport",
+    title: "Cerita di Balik Warisan Balap",
+    slug: "cerita-di-balik-warisan-balap",
     category: "family-legacy",
     excerpt:
-      "Motorsport is built on more than speed. It is shaped by discipline, values, mentorship, and the courage to pass passion from one generation to another.",
+      "Kisah dari lintasan balap, nilai keluarga, mentorship, dan semangat motorsport yang terus diwariskan dari generasi ke generasi.",
     image: "/images/rs-legacy.png",
     author: "Inside RS Team",
     date: "Inside RS",
   },
   {
-    title: "Inside The Legend Continues",
-    slug: "inside-the-legend-continues",
+    title: "Behind The Legend Continues",
+    slug: "behind-the-legend-continues",
     category: "motorsport",
     excerpt:
-      "A closer look at the preparation, energy, and emotional story behind the upcoming cross-generation race between Rifat Sungkar and El Mayka.",
+      "Persiapan, energi, dan momen emosional di balik cerita balapan lintas generasi antara Rifat Sungkar dan El Mayka.",
     image: "/images/rs-motorsport.png",
     author: "Inside RS Team",
     date: "Inside RS",
   },
   {
-    title: "Secret Riding and the Freedom of the Open Road",
-    slug: "secret-riding-and-the-freedom-of-the-open-road",
+    title: "Secret Riding dan Cerita Perjalanan",
+    slug: "secret-riding-dan-cerita-perjalanan",
     category: "lifestyle",
     excerpt:
-      "A journey that blends adventure, family bonding, and the cinematic lifestyle side of automotive culture.",
+      "Road trip eksklusif yang memadukan petualangan, family bonding, dan visual sinematik dari sisi lifestyle keluarga Sungkar.",
     image: "/images/rs-lifestyle.png",
     author: "Inside RS Team",
     date: "Inside RS",
@@ -42,18 +42,19 @@ const fallbackArticles = [
 ];
 
 const categories = [
-  "All Stories",
-  "Campaign Updates",
+  "Semua Kategori",
+  "Updates",
   "Motorsport",
   "Lifestyle",
-  "Family Legacy",
+  "Family",
+  "Legacy",
   "Behind The Scenes",
 ];
 
 export const metadata = {
-  title: "Rifat Sungkar Stories | Motorsport & Lifestyle",
+  title: "Blog Rifat Sungkar 2026 | Inside RS",
   description:
-    "Read campaign stories, motorsport insights, lifestyle riding updates, and behind-the-scenes moments from Rifat Sungkar 2026.",
+    "Kulik lebih dalam tentang Rifat Sungkar 2026, mulai dari update kegiatan terkini, insight motorsport, behind the scenes, dan cerita menarik lainnya dari Inside RS.",
 };
 
 export default async function BlogPage() {
@@ -80,7 +81,7 @@ export default async function BlogPage() {
 
   const featuredArticle = featuredSource
     ? {
-        title: featuredSource.title || "Latest Highlight",
+        title: featuredSource.title || "Cerita Pilihan Inside RS",
         slug: featuredSource.slug || "#",
         category: featuredSource.category,
         excerpt: featuredSource.excerpt || "",
@@ -110,14 +111,14 @@ export default async function BlogPage() {
               </p>
 
               <h1 className="font-tungsten mt-5 max-w-4xl text-7xl font-black uppercase leading-[0.86] tracking-normal text-white md:text-8xl lg:text-9xl">
-                Stories Behind
+                Cerita Dibalik
                 <br />
-                The Journey
+                Juara
               </h1>
 
               <p className="mt-7 max-w-2xl text-xl leading-9 tracking-[0.02em] text-white/78">
-                Explore campaign updates, motorsport insights, behind-the-scenes moments, and
-                lifestyle stories from Inside RS.
+                Kulik lebih dalam tentang Rifat Sungkar 2026, mulai dari update kegiatan terkini,
+                insight motorsport, behind the scenes, dan cerita menarik lainnya dari Inside RS.
               </p>
 
               <div className="mt-9 flex flex-col gap-4 sm:flex-row">
@@ -128,14 +129,14 @@ export default async function BlogPage() {
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20">
                     →
                   </span>
-                  Read Stories
+                  Read More
                 </a>
 
                 <a
                   href="/events"
                   className="inline-flex items-center justify-center rounded-full border border-white/20 bg-black/20 px-8 py-4 text-[11px] font-black uppercase tracking-[0.24em] text-white/85 backdrop-blur-sm transition hover:border-white hover:bg-white hover:text-black"
                 >
-                  Explore Events
+                  Discover The Story Now
                 </a>
               </div>
             </div>
@@ -153,12 +154,12 @@ export default async function BlogPage() {
                 </p>
 
                 <h2 className="font-tungsten mt-4 text-6xl font-black uppercase leading-none tracking-normal text-white md:text-7xl">
-                  Latest Highlight
+                  Paling Menarik!
                 </h2>
               </div>
 
               <p className="max-w-xl text-base leading-7 tracking-[0.02em] text-white/62 lg:justify-self-end">
-                A selected editorial story that introduces the emotional core of the campaign.
+                Artikel pilihan yang bisa dibaca untuk mendalami kegiatan yang sudah dijalankan.
               </p>
             </div>
 
@@ -198,7 +199,7 @@ export default async function BlogPage() {
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20">
                     →
                   </span>
-                  Read Full Story
+                  Read More
                 </a>
               </div>
             </article>
@@ -215,7 +216,7 @@ export default async function BlogPage() {
               </p>
 
               <h2 className="font-tungsten mt-4 text-6xl font-black uppercase leading-none tracking-normal text-white md:text-7xl">
-                Latest Stories
+                Cerita Terbaru
               </h2>
             </div>
 
@@ -270,7 +271,7 @@ export default async function BlogPage() {
                   >
                     <div className="flex items-center justify-between gap-4 px-5 py-4">
                       <span className="text-[11px] font-black uppercase tracking-[0.22em] text-[#07090d]">
-                        Read Story
+                        Read More
                       </span>
 
                       <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#07090d] text-sm text-white">
