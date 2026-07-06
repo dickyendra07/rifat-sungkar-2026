@@ -10,27 +10,27 @@ import {
 const timeline = [
   {
     number: "01",
-    title: "Campaign Announcement",
+    title: "Pengenalan Pertama",
     description:
-      "The official introduction of Rifat Sungkar 2026: The Legend Continues, revealing the campaign direction and its two main stories.",
+      "Pengumuman resmi campaign Rifat Sungkar: The Legend Continues dengan dua cerita sebagai event utamanya.",
   },
   {
     number: "02",
-    title: "Preparation Journey",
+    title: "Persiapan Mendalam",
     description:
-      "Behind-the-scenes preparation, vehicle setup, content production, training moments, and family-driven campaign storytelling.",
+      "Mulai dari behind the scenes, set up mobil, konten, momen latihan dan keluarga yang tak pernah tersorot kamera sebelumnya.",
   },
   {
     number: "03",
-    title: "Main Event Activation",
+    title: "Momen Kunci",
     description:
-      "The key campaign moments featuring the racing legacy between Rifat and El Mayka, plus the cinematic lifestyle riding story with Sissy.",
+      "Berbagai momen yang tidak boleh dilewatkan selama balapan berlangsung bersama El Mayka atau cerita riding bersama Sissy Priscillia.",
   },
   {
     number: "04",
-    title: "Stories & Recap",
+    title: "Recap",
     description:
-      "Post-event highlights, media coverage, gallery content, and editorial stories that continue the campaign beyond the event day.",
+      "Post-event highlights, media coverage, koleksi foto, hingga berbagai cerita menarik yang bisa dinikmati bahkan setelah kegiatan sudah selesai.",
   },
 ];
 
@@ -38,22 +38,22 @@ const categories = [
   {
     title: "Motorsport",
     description:
-      "High-energy racing, performance culture, competition, and discipline on the circuit.",
+      "Kegiatan yang menampilkan performa, kecepatan, disiplin, kompetisi, dan energi balapan dari kultur motorsport.",
   },
   {
-    title: "Family Legacy",
+    title: "Riding",
     description:
-      "A story about passion, values, mentorship, and the bond between generations.",
+      "Perjalanan eksklusif yang membawakan cerita road trip, eksplorasi, lifestyle otomotif, dan petualangan keluarga Sungkar.",
   },
   {
-    title: "Lifestyle Riding",
+    title: "Legacy",
     description:
-      "Open-road moments, cinematic travel, togetherness, and automotive lifestyle.",
+      "Cerita tentang warisan, nilai keluarga, mentorship, dan semangat balapan yang diteruskan dari satu generasi ke generasi berikutnya.",
   },
   {
     title: "Media & Community",
     description:
-      "Press coverage, community engagement, behind-the-scenes content, and campaign updates.",
+      "Liputan media, update campaign, konten behind the scenes, serta aktivitas komunitas yang membantu menghidupkan cerita Inside RS.",
   },
 ];
 
@@ -66,7 +66,7 @@ const fallbackEvents = [
     status: "coming-soon",
     location: "TBA",
     shortDescription:
-      "A cross-generation racing moment between father and son. This event celebrates the passion passed from Rifat Sungkar to El Mayka.",
+      "Balapan lintas generasi antara ayah dan anak dengan bakat dan semangat yang diteruskan turun temurun di track balap dari Rifat Sungkar ke El Mayka.",
     thumbnailUrl: "/images/rs-about-front.png",
   },
   {
@@ -77,15 +77,15 @@ const fallbackEvents = [
     status: "coming-soon",
     location: "TBA",
     shortDescription:
-      "An exclusive riding journey that captures the lifestyle side of the Sungkar family through adventure, freedom, and togetherness.",
+      "Road trip eksklusif, penuh tantangan dan petualangan oleh Rifat Sungkar dan Sissy Priscillia menjelajahi berbagai spot rahasia di Indonesia yang belum pernah dikunjungi sebelumnya.",
     thumbnailUrl: "/images/rs-lifestyle.png",
   },
 ];
 
 export const metadata = {
-  title: "Rifat Sungkar 2026 Events | Racing & Riding",
+  title: "Events Rifat Sungkar 2026 | Inside RS",
   description:
-    "Explore Rifat Sungkar 2026 events, including The Legend Continues with El Mayka and Secret Riding with Sissy Priscillia.",
+    "Cari tahu berbagai kegiatan Rifat Sungkar 2026, mulai dari balapan lintas generasi bersama El Mayka hingga Secret Riding bersama Sissy Priscillia.",
 };
 
 export default async function EventsPage() {
@@ -125,15 +125,15 @@ export default async function EventsPage() {
               </p>
 
               <h1 className="font-tungsten mt-5 max-w-4xl text-7xl font-black uppercase leading-[0.86] tracking-normal text-white md:text-8xl lg:text-9xl">
-                Two Stories.
+                Dua Cerita,
                 <br />
-                One Legacy.
+                Satu Keluarga.
               </h1>
 
               <p className="mt-7 max-w-2xl text-xl leading-9 tracking-[0.02em] text-white/78">
-                Explore the official campaign events of Rifat Sungkar 2026, from a
-                cross-generation racing moment with El Mayka to a cinematic riding journey with
-                Sissy Priscillia.
+                Cari tahu lebih lanjut berbagai kegiatan Rifat Sungkar di tahun 2026, mulai dari
+                balapan lintas generasi bersama El Mayka dan road trip eksklusif keliling
+                Indonesia bersama Sissy Priscillia.
               </p>
 
               <div className="mt-9 flex flex-col gap-4 sm:flex-row">
@@ -144,32 +144,32 @@ export default async function EventsPage() {
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20">
                     →
                   </span>
-                  View Events
+                  Find The Event
                 </a>
 
                 <a
                   href="/contact"
                   className="inline-flex items-center justify-center rounded-full border border-white/20 bg-black/20 px-8 py-4 text-[11px] font-black uppercase tracking-[0.24em] text-white/85 backdrop-blur-sm transition hover:border-white hover:bg-white hover:text-black"
                 >
-                  Contact Team
+                  Contact Us
                 </a>
               </div>
             </div>
 
             <div className="rounded-[2rem] border border-white/10 bg-black/35 p-7 shadow-2xl shadow-black/35 backdrop-blur-md">
               <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#62d9db]">
-                Campaign Events
+                Inside RS Events
               </p>
 
               <h2 className="font-tungsten mt-4 text-5xl font-black uppercase leading-none tracking-normal text-white md:text-6xl">
-                Racing,
+                Segala Hal
                 <br />
-                Riding & Legacy
+                Tentang Balapan dan Riding
               </h2>
 
               <p className="mt-5 text-base leading-7 tracking-[0.02em] text-white/62">
-                Events are now managed from the Inside RS CMS and displayed dynamically on this
-                website.
+                Seluruh kegiatan, termasuk balapan hingga Secret Riding, di-handle langsung oleh
+                tim Inside RS.
               </p>
             </div>
           </div>
@@ -184,13 +184,13 @@ export default async function EventsPage() {
                 Featured Events
               </p>
               <h2 className="font-tungsten mt-4 text-6xl font-black uppercase leading-none tracking-normal text-white md:text-7xl">
-                Campaign Activations
+                Kegiatan di 2026
               </h2>
             </div>
 
             <p className="max-w-xl text-base leading-7 tracking-[0.02em] text-white/62">
-              Each event brings a different side of the campaign: performance, family, lifestyle,
-              and the continuation of Indonesian motorsport legacy.
+              Menampilkan sudut pandang yang berbeda dari balapan, family, hingga lifestyle dari
+              kacamata keluarga Rifat Sungkar.
             </p>
           </div>
 
@@ -246,7 +246,7 @@ export default async function EventsPage() {
                     >
                       <div className="flex items-center justify-between gap-4 px-5 py-4">
                         <span className="text-[11px] font-black uppercase tracking-[0.22em] text-[#07090d]">
-                          View Event Details
+                          See What's Next
                         </span>
 
                         <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#07090d] text-sm text-white">
@@ -278,7 +278,7 @@ export default async function EventsPage() {
               Campaign Journey
             </p>
             <h2 className="font-tungsten mt-4 text-6xl font-black uppercase leading-none tracking-normal text-white md:text-7xl">
-              Event Timeline
+              Timeline Event
             </h2>
           </div>
 
@@ -310,7 +310,7 @@ export default async function EventsPage() {
               Event Categories
             </p>
             <h2 className="font-tungsten mt-4 text-6xl font-black uppercase leading-[0.9] tracking-normal text-white md:text-7xl">
-              What the Campaign Covers
+              Ada Kegiatan Apa Saja?
             </h2>
           </div>
 
