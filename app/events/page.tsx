@@ -104,7 +104,7 @@ export default async function EventsPage() {
           thumbnailUrl:
             getCMSMediaUrl(event.thumbnailImage) ||
             getCMSMediaUrl(event.heroImage) ||
-            "/images/hero-rifat.png",
+            "/images/revisi-rs/rs-home-hero.webp",
         }))
       : fallbackEvents;
 
@@ -113,7 +113,7 @@ export default async function EventsPage() {
       <Navbar />
 
       <section className="relative overflow-hidden bg-[#07090d] pt-[88px]">
-        <div className="relative min-h-[680px] bg-[url('/images/hero-rifat.png')] bg-cover bg-center">
+        <div className="relative min-h-[680px] bg-[url('/images/revisi-rs/rs-home-hero.webp')] bg-cover bg-center">
           <div className="absolute inset-0 bg-black/45" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/78 via-black/38 to-black/35" />
           <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#07090d] to-transparent" />

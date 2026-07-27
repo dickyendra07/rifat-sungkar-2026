@@ -9,7 +9,7 @@ const fallbackPartners = [
     name: "Inside RS",
     tier: "official-partner",
     description: "Official campaign platform for Rifat Sungkar 2026.",
-    logo: "/images/rs-logo.png",
+    logo: "/images/revisi-rs/rs-logo-new.svg",
     websiteUrl: "/",
   },
 ];
@@ -23,7 +23,7 @@ export default async function PartnersSection() {
           name: partner.name || "Partner",
           tier: partner.tier,
           description: partner.description || "Official partner of Inside RS.",
-          logo: getCMSMediaUrl(partner.logo) || "/images/rs-logo.png",
+          logo: getCMSMediaUrl(partner.logo) || "/images/revisi-rs/rs-logo-new.svg",
           websiteUrl: partner.websiteUrl || "#",
         }))
       : fallbackPartners;

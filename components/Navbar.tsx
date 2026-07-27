@@ -111,7 +111,7 @@ export default function Navbar() {
     <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/5 bg-[#07090d]/84 backdrop-blur-xl">
       <nav className="mx-auto flex h-[92px] max-w-[1440px] items-center justify-between px-6 md:px-10 lg:px-12">
         <a href="/" aria-label="Inside RS Home" className="shrink-0">
-          <img src="/images/rs-logo.png" alt="Inside RS" className="h-auto w-28 md:w-32" />
+          <img src="/images/revisi-rs/rs-logo-new.svg" alt="Inside RS" className="h-auto w-28 md:w-32" />
         </a>
 
         <div className="hidden rounded-full border border-white/10 bg-white/[0.035] p-1 shadow-2xl shadow-black/20 md:flex">
@@ -167,7 +167,7 @@ export default function Navbar() {
       {isOpen ? (
         <div className="border-t border-white/10 bg-[#07090d]/96 px-4 pb-5 pt-3 shadow-2xl shadow-black/40 backdrop-blur-xl md:hidden">
           <div className="mb-4 overflow-hidden rounded-2xl border border-white/10 bg-[#111820]">
-            <div className="h-10 bg-[url('/images/rs-pattern-strip.png')] bg-cover bg-center opacity-80" />
+            <div className="h-10 bg-[url('/images/revisi-rs/rs-pattern-divider.svg')] bg-cover bg-center opacity-80" />
           </div>
 
           <div className="flex flex-col gap-2">

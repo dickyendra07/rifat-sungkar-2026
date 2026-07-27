@@ -41,7 +41,7 @@ export default async function StoriesSection() {
           image:
             getCMSMediaUrl(article.thumbnailImage) ||
             getCMSMediaUrl(article.heroImage) ||
-            "/images/hero-rifat.png",
+            "/images/revisi-rs/rs-home-hero.webp",
           featured: article.featuredArticle,
         }))
       : fallbackStories.map((story) => ({

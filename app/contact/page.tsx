@@ -253,7 +253,7 @@ export default async function ContactPage() {
             </p>
 
             <div id="direct-contact" className="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] shadow-xl shadow-black/10 md:mt-10">
-              <div className="h-12 bg-[url('/images/rs-pattern-strip.png')] bg-cover bg-center opacity-85" />
+              <div className="h-12 bg-[url('/images/revisi-rs/rs-pattern-divider.svg')] bg-cover bg-center opacity-85" />
 
               <div className="p-6">
                 <h3 className="font-tungsten text-4xl font-black leading-none tracking-normal text-white">
@@ -359,7 +359,7 @@ export default async function ContactPage() {
 
             <div className="rs-mobile-slider -mx-6 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-4 md:mx-0 md:grid md:grid-cols-2 md:gap-6 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-3">
               {contactPartners.map((partner) => {
-                const logo = getCMSMediaUrl(partner.logo) || "/images/rs-logo.png";
+                const logo = getCMSMediaUrl(partner.logo) || "/images/revisi-rs/rs-logo-new.svg";
 
                 return (
                   <article

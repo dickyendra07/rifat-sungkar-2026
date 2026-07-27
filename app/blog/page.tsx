@@ -71,7 +71,7 @@ export default async function BlogPage() {
           image:
             getCMSMediaUrl(article.thumbnailImage) ||
             getCMSMediaUrl(article.heroImage) ||
-            "/images/hero-rifat.png",
+            "/images/revisi-rs/rs-home-hero.webp",
           author: article.author || "Inside RS Team",
           date: formatDate(article.publishedDate),
         }))
@@ -88,7 +88,7 @@ export default async function BlogPage() {
         image:
           getCMSMediaUrl(featuredSource.heroImage) ||
           getCMSMediaUrl(featuredSource.thumbnailImage) ||
-          "/images/hero-rifat.png",
+          "/images/revisi-rs/rs-home-hero.webp",
         author: featuredSource.author || "Inside RS Team",
         date: formatDate(featuredSource.publishedDate),
       }

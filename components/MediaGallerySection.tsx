@@ -110,7 +110,7 @@ export default async function MediaGallerySection() {
                       className="relative h-full min-w-full snap-center overflow-hidden"
                     >
                       <img
-                        src={slide.image || "/images/hero-rifat.png"}
+                        src={slide.image || "/images/revisi-rs/rs-home-hero.webp"}
                         alt={slide.caption || `${item.title} slide ${index + 1}`}
                         className="h-full w-full object-cover object-center transition duration-500 group-hover:scale-105"
                       />

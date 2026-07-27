@@ -39,7 +39,7 @@ export default async function EventsPreviewSection() {
           image:
             getCMSMediaUrl(event.thumbnailImage) ||
             getCMSMediaUrl(event.heroImage) ||
-            "/images/hero-rifat.png",
+            "/images/revisi-rs/rs-home-hero.webp",
         }))
       : fallbackEvents;
 

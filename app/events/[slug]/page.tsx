@@ -109,7 +109,7 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
       getCMSMediaUrl(cmsEvent?.heroImage) ||
       getCMSMediaUrl(cmsEvent?.thumbnailImage) ||
       fallbackEvent?.image ||
-      "/images/hero-rifat.png",
+      "/images/revisi-rs/rs-home-hero.webp",
     intro: cmsEvent?.shortDescription || fallbackEvent?.intro || "",
     overview: cmsEvent?.overview || fallbackEvent?.overview || "",
     storyTitle: cmsEvent?.storyTitle || fallbackEvent?.storyTitle || "Event Story",

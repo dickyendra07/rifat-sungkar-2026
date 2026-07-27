@@ -33,13 +33,13 @@ export default async function Footer() {
     <footer className="bg-[#07090d] px-6 pb-10 pt-20 md:px-10 lg:px-12">
       <div className="mx-auto max-w-[1440px]">
         <div className="relative mb-10 h-24 overflow-hidden rounded-2xl border border-white/5 bg-[#111820]">
-          <div className="absolute inset-0 bg-[url('/images/rs-pattern-strip.png')] bg-cover bg-center opacity-95" />
+          <div className="absolute inset-0 bg-[url('/images/revisi-rs/rs-pattern-divider.svg')] bg-cover bg-center opacity-95" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#07090d] via-transparent to-[#07090d]" />
         </div>
 
         <div className="grid gap-10 border-t border-white/10 pt-10 md:grid-cols-[1.2fr_0.8fr_0.8fr]">
           <div>
-            <img src="/images/rs-logo.png" alt="Inside RS" className="h-auto w-28" />
+            <img src="/images/revisi-rs/rs-logo-new.svg" alt="Inside RS" className="h-auto w-28" />
 
             <p className="mt-6 max-w-md text-sm leading-7 tracking-[0.02em] text-white/58">
               {description}
@@ -113,7 +113,7 @@ export default async function Footer() {
 
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {footerPartners.map((partner) => {
-                const logo = getCMSMediaUrl(partner.logo) || "/images/rs-logo.png";
+                const logo = getCMSMediaUrl(partner.logo) || "/images/revisi-rs/rs-logo-new.svg";
 
                 return (
                   <a

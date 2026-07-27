@@ -24,14 +24,14 @@ export const metadata: Metadata = {
     description:
       "Official campaign website of Rifat Sungkar 2026, featuring motorsport legacy, family stories, events, lifestyle, and campaign updates.",
     type: "website",
-    images: ["/images/hero-rifat.png"],
+    images: ["/images/revisi-rs/rs-home-hero.webp"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Rifat Sungkar 2026 | The Legend Continues",
     description:
       "Official campaign website of Rifat Sungkar 2026, featuring motorsport legacy, family stories, events, lifestyle, and campaign updates.",
-    images: ["/images/hero-rifat.png"],
+    images: ["/images/revisi-rs/rs-home-hero.webp"],
   },
   icons: {
     icon: "/icon.png",

@@ -41,7 +41,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
   const heroImage =
     getCMSMediaUrl(article.heroImage) ||
     getCMSMediaUrl(article.thumbnailImage) ||
-    "/images/hero-rifat.png";
+    "/images/revisi-rs/rs-home-hero.webp";
 
   const paragraphs = article.content
     ? article.content
