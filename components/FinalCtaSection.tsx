@@ -10,14 +10,8 @@ export default function FinalCtaSection() {
             <div className="absolute inset-0 bg-gradient-to-r from-black/78 via-black/38 to-black/20" />
             <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-black/55 to-transparent" />
 
-            <div className="absolute right-0 top-0 hidden h-full w-[310px] border-l border-white/12 bg-black/28 backdrop-blur-[1px] lg:block">
-              <div className="absolute inset-0 bg-gradient-to-b from-white/8 via-transparent to-[#62d9db]/10" />
-              <div className="absolute inset-x-0 top-0 h-3 bg-gradient-to-r from-[#62d9db] via-white to-[#f19ac2]" />
-              <div className="absolute inset-x-8 top-10 h-[470px] rs-kenburns-bg bg-[url('/images/rs-ornament-badge.png')] bg-contain bg-top bg-no-repeat opacity-[0.95]" />
-              <div className="absolute bottom-8 left-8 right-8 h-16 overflow-hidden rounded-xl border border-white/10">
-                <div className="absolute inset-0 rs-kenburns-bg bg-[url('/images/rs-pattern-strip.png')] rs-kenburns-bg bg-cover bg-center opacity-95" />
-                <div className="absolute inset-0 bg-black/10" />
-              </div>
+            <div className="absolute right-0 top-0 hidden h-full w-[310px] lg:block">
+              <div className="absolute inset-0 bg-[url('/images/revisi-rs/page-2/rs-cta-ornament.svg')] bg-contain bg-center bg-no-repeat" />
             </div>
 
             <div className="relative z-10 flex min-h-[600px] flex-col justify-end px-6 pb-8 pt-20 md:px-8 lg:px-10 lg:pr-[350px]">
@@ -57,7 +51,7 @@ export default function FinalCtaSection() {
               </div>
 
               <div className="mt-6 h-12 overflow-hidden rounded-xl border border-white/5 bg-[#07090d] lg:hidden">
-                <div className="h-full rs-kenburns-bg bg-[url('/images/rs-pattern-strip.png')] rs-kenburns-bg bg-cover bg-center opacity-95" />
+                <div className="h-full rs-kenburns-bg bg-[url('/images/revisi-rs/rs-pattern-divider.svg')] rs-kenburns-bg bg-cover bg-center opacity-95" />
               </div>
             </div>
           </div>
