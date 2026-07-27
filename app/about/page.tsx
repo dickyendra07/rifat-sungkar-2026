@@ -90,7 +90,7 @@ export default function AboutPage() {
       <Navbar />
 
       <section className="rs-reveal relative overflow-hidden bg-[#07090d] pt-[88px]">
-        <div className="relative min-h-[700px] rs-kenburns-bg bg-[url('/images/rs-about-front.png')] bg-cover bg-center">
+        <div className="relative min-h-[700px] rs-kenburns-bg bg-[url('/images/revisi-rs/page-3/rs-about-hero.webp')] bg-cover bg-center">
           <div className="absolute inset-0 bg-black/48" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/84 via-black/48 to-black/25" />
           <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#07090d] to-transparent" />
@@ -169,7 +169,7 @@ export default function AboutPage() {
 
             <div className="absolute bottom-0 right-0 z-10 w-[82%] overflow-hidden rounded-2xl border border-white/10 bg-[#111820] shadow-2xl shadow-black/40">
               <img
-                src="/images/rs-about-front.png"
+                src="/images/revisi-rs/page-3/rs-about-hero.webp"
                 alt="Rifat Sungkar and El Mayka"
                 className="h-auto w-full object-contain"
               />
